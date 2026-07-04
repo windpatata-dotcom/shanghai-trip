@@ -274,14 +274,36 @@
     </div></div>
   </div>
 
+  <div class="tl-item alt2c">
+    <div class="tl-time"><span class="tb">19:00</span></div>
+    <div class="tl-body"><div class="ec blue compact" onclick="openModal('modal6a')">
+      <div class="ec-title-row">
+        <div class="ec-title">🥟 南翔饅頭店（豫園本店）</div>
+        <button class="detail-btn" onclick="openModal('modal6a')">詳情 ›</button>
+      </div>
+      <p class="ec-summary">人和館→豫園約20分鐘，蟹粉小籠・蝦仁小籠必點</p>
+    </div></div>
+  </div>
+
+  <div class="tl-item alt2c">
+    <div class="tl-time"><span class="tb">20:00</span></div>
+    <div class="tl-body"><div class="ec blue compact" onclick="openModal('modal6b')">
+      <div class="ec-title-row">
+        <div class="ec-title">🌆 外灘夜景漫步</div>
+        <button class="detail-btn" onclick="openModal('modal6b')">詳情 ›</button>
+      </div>
+      <p class="ec-summary">豫園步行約10分鐘，萬國建築燈光＋陸家嘴天際線</p>
+    </div></div>
+  </div>
+
   <div class="tl-item">
     <div class="tl-time"><span class="tb">21:00</span></div>
     <div class="tl-body"><div class="ec compact" onclick="openModal('modal6')">
       <div class="ec-title-row">
-        <div class="ec-title">🚗 餐後返回萬怡酒店</div>
+        <div class="ec-title">🚗 返回萬怡酒店</div>
         <button class="detail-btn" onclick="openModal('modal6')">詳情 ›</button>
       </div>
-      <p class="ec-summary">外灘 → 上海浦西萬怡酒店</p>
+      <p class="ec-summary">外灘叫車，約15分鐘回酒店</p>
     </div></div>
   </div>
 
@@ -624,7 +646,7 @@
   <table class="budget-table">
     <tr><th>項目</th><th style="text-align:right">人民幣</th></tr>
     <tr><td>7/11 海鹽→萬怡酒店 滴滴（5人均攤4/5）</td><td>¥308</td></tr>
-    <tr><td>7/11 外灘晚餐（4人）</td><td>¥400</td></tr>
+    <tr><td>7/11 人和館晚餐（4人，¥180×4）</td><td>¥720</td></tr>
     <tr><td>7/12 萬怡→天文館 滴滴（6人均攤4/6）</td><td>¥186</td></tr>
     <tr><td>7/12 天文館午餐（4人）</td><td>¥240</td></tr>
     <tr><td>7/12 天文館→酒店 7座（4/6均攤）</td><td>¥133</td></tr>
@@ -633,13 +655,13 @@
     <tr><td>7/13 園內午餐・雨衣・棒冰・飲料（4人）</td><td>¥800</td></tr>
     <tr><td>7/14 酒店→浦東機場 7座（4/6均攤）</td><td>¥53</td></tr>
   </table>
-  <div class="budget-total"><span>Rian家 小計</span><span>¥3,240 ≈ NT$14,580</span></div>
+  <div class="budget-total"><span>Rian家 小計</span><span>¥3,560 ≈ NT$16,020</span></div>
 
   <p style="font-size:12px;color:var(--warm-gray);padding:16px 2px 8px;letter-spacing:1px;">👩‍👦 忻禹＋李子（2人）</p>
   <table class="budget-table">
     <tr><th>項目</th><th style="text-align:right">人民幣</th></tr>
     <tr><td>7/11 海鹽→萬怡酒店 滴滴（5人均攤1/5）</td><td>¥77</td></tr>
-    <tr><td>7/11 外灘晚餐（2人）</td><td>¥200</td></tr>
+    <tr><td>7/11 人和館晚餐（2人，¥180×2）</td><td>¥360</td></tr>
     <tr><td>7/12 萬怡→天文館 滴滴（6人均攤2/6）</td><td>¥93</td></tr>
     <tr><td>7/12 天文館午餐（2人）</td><td>¥120</td></tr>
     <tr><td>7/12 天文館→酒店 7座（2/6均攤）</td><td>¥67</td></tr>
@@ -648,7 +670,7 @@
     <tr><td>7/13 園內午餐・雨衣・棒冰・飲料（2人）</td><td>¥400</td></tr>
     <tr><td>7/14 酒店→浦東機場 7座（2/6均攤）</td><td>¥27</td></tr>
   </table>
-  <div class="budget-total" style="background:#5A2D7A"><span>忻禹李子 小計</span><span>¥1,544 ≈ NT$6,948</span></div>
+  <div class="budget-total" style="background:#5A2D7A"><span>忻禹李子 小計</span><span>¥1,704 ≈ NT$7,668</span></div>
   <p class="budget-note">※ Jack 個人費用自理（7/11晚餐除外，已併入6人均攤）。不含機票、酒店房費、迪士尼門票。車資依百度地圖實際報價更新；7/11晚餐、7/12晚餐車資為估算，僅供參考。</p>
 </div>
 
@@ -1082,8 +1104,8 @@ function switchSubgroup(id){
 <div id="modal4" class="modal-overlay" onclick="if(event.target===this)closeModal('modal4')">
   <div class="modal-box">
     <button class="modal-close" onclick="closeModal('modal4')">✕</button>
-    <div class="modal-time">18:00</div>
-    <div class="ec-title modal-title">🚗 6人會合，出發外灘晚餐</div>
+    <div class="modal-time">16:45</div>
+    <div class="ec-title modal-title">🍽️ 6人前往人和館・上海菜</div>
     <p class="ec-body">全員6人集合，叫車前往 <strong>人和館・上海菜（靜安寺店）</strong>，距萬怡酒店僅約 <strong>10 分鐘車程</strong>。<span class="blu">米其林一星本幫菜，17:00 訂位。</span></p>
     <div class="subs"><div class="si bb">📍 靜安區愚園路142號 3樓（面對靜安寺佛塔，近張愛玲故居）</div><div class="si bb">🍜 必試：蟹粉撈飯・金牌紅燒肉・老上海醬爆豬肝・捨得（時令青菜）</div><div class="si bb">⚠️ 訂位需付押金300元，需提前確認訂位</div></div>
   </div>
@@ -1091,17 +1113,17 @@ function switchSubgroup(id){
 <div id="modal5" class="modal-overlay" onclick="if(event.target===this)closeModal('modal5')">
   <div class="modal-box">
     <button class="modal-close" onclick="closeModal('modal5')">✕</button>
-    <div class="modal-time">18:30</div>
-    <div class="ec-title modal-title">🌆 外灘晚餐 ＋ 夜景漫步</div>
+    <div class="modal-time">17:00</div>
+    <div class="ec-title modal-title">🍜 人和館晚餐</div>
     <p class="ec-body">米其林一星本幫菜，人均約 <strong>¥180</strong>，6人約 <strong>¥1,080</strong>（Rian家4人 ¥720 / 忻禹李子 ¥360）。飯後可在靜安寺一帶散步夜遊，氛圍佳。</p>
   </div>
 </div>
 <div id="modal6" class="modal-overlay" onclick="if(event.target===this)closeModal('modal6')">
   <div class="modal-box">
     <button class="modal-close" onclick="closeModal('modal6')">✕</button>
-    <div class="modal-time">21:00</div>
-    <div class="ec-title modal-title">🚗 返回萬怡酒店</div>
-    <p class="ec-body">人和館 → 上海浦西萬怡酒店，約 10 分鐘車程。<span class="red">提醒：明天要帶全部行李出發天文館，今晚先把行李打包好</span>，回房盡快休息。</p>
+    <div class="modal-time">20:00</div>
+    <div class="ec-title modal-title">🚗 餐後返回萬怡酒店</div>
+    <p class="ec-body">人和館 → 南翔饅頭店（豫園）→ 外灘散步 → 萬怡酒店。<span class="red">提醒：明天要帶全部行李出發天文館，今晚先把行李打包好</span>，回房盡快休息。</p>
   </div>
 </div>
 <div id="modal7" class="modal-overlay" onclick="if(event.target===this)closeModal('modal7')">
@@ -1543,6 +1565,31 @@ function switchSubgroup(id){
     <div class="modal-time">09:10</div>
     <div class="ec-title modal-title">✈️ 浦東機場 T1・完美收尾</div>
     <p class="ec-body"><strong>華航 CI 502（12:05）</strong>的 3 小時前報到，輕鬆過安檢返台。</p><div class="badge">✓ 動線已核實
+  </div>
+</div>
+<div id="modal6a" class="modal-overlay" onclick="if(event.target===this)closeModal('modal6a')">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal('modal6a')">✕</button>
+    <div class="modal-time">19:00</div>
+    <div class="ec-title modal-title">🥟 南翔饅頭店（豫園本店）</div>
+    <p class="ec-body">從人和館叫車約 <strong>20分鐘</strong>抵達豫園商城。百年老字號，二、三樓內用冷氣佳。</p>
+    <div class="subs">
+      <div class="si bb">📍 黃浦區豫園路85號（城隍廟旁）</div>
+      <div class="si bb">🍜 必點：<strong>蟹粉小籠</strong>・<strong>蝦仁小籠</strong>（拿吸管吸湯汁，平仔覺得有趣）</div>
+      <div class="si bb">⚠️ 晚間人潮較多，建議直接上二樓等候內用</div>
+    </div>
+  </div>
+</div>
+<div id="modal6b" class="modal-overlay" onclick="if(event.target===this)closeModal('modal6b')">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal('modal6b')">✕</button>
+    <div class="modal-time">20:00</div>
+    <div class="ec-title modal-title">🌆 外灘夜景漫步</div>
+    <p class="ec-body">從豫園步行約 <strong>10-15分鐘</strong>即到外灘。夜幕下的萬國建築燈光與對岸陸家嘴天際線，是這趟最值得拍的夜景。<span class="blu">Jelian 在這裡拍全家福，背景是整個魔都最標誌性的夜景。</span></p>
+    <div class="subs">
+      <div class="si bb">散步至外灘觀景台，沿黃浦江漫步</div>
+      <div class="si bb">約逛到 21:00，再叫滴滴回萬怡酒店（約15分鐘）</div>
+    </div>
   </div>
 </div>
 </body>
