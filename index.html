@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-<title>三天兩夜上海行程</title>
+<title>上海三天兩夜行程</title>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@700;900&family=Noto+Sans+TC:wght@400;500&display=swap" rel="stylesheet">
 <style>
   :root {
@@ -13,16 +13,12 @@
     --warm-gray:#8B7D6B; --card-bg:#FFFDF8;
     --border:#DDD0BC; --text-body:#4A3D30;
     --day1:#1A5A52; --day2:#7A3A0A; --day3:#2A3A6A;
-    --alt:#5A2D7A;
+    --alt:#5A2D7A; --alt2:#1A4A6A;
   }
   *{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
   html{font-size:16px;}
   body{background:var(--cream);color:var(--ink);font-family:'Noto Sans TC',sans-serif;font-weight:400;line-height:1.75;}
-
-  /* CONTAINER */
   .container{max-width:900px;margin:0 auto;}
-  
-  /* DESKTOP LAYOUT */
   @media(min-width:700px){
     header h1{font-size:42px;}
     .header-tag{font-size:13px;padding:5px 18px;}
@@ -49,115 +45,81 @@
     .budget-total{font-size:15px;}
     .budget-total span{font-size:19px;}
     .rules-wrap{padding:0 24px;}
-    .rbody h3{font-size:16px;}
-    .rbody p{font-size:14px;}
-    .alt-note{margin:0 24px;font-size:14px;}
-    .rule{padding:18px 20px;}
-    .rules-wrap > div > div{font-size:14px !important;}
-    .rules-wrap .subs .si{font-size:14px;}
-  }
-
-  @media(min-width:700px){
+    .alt-note{margin:0 24px;}
     .day-info .day-date{font-size:22px;}
-    .day-info .day-desc{font-size:13px;}
     .day-num{font-size:14px;padding:16px 12px;}
+    .subgroup-tab-btn{font-size:13px;}
   }
-
-  /* HEADER */
   header{background:var(--ink);padding:28px 20px 22px;text-align:center;position:relative;overflow:hidden;}
   header::before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(45deg,transparent,transparent 18px,rgba(201,147,58,0.07) 18px,rgba(201,147,58,0.07) 19px);}
   .header-tag{position:relative;display:inline-block;border:1px solid var(--gold);color:var(--gold);font-size:11px;letter-spacing:2px;padding:3px 12px;margin-bottom:10px;}
   header h1{position:relative;font-family:'Noto Serif TC',serif;font-weight:900;font-size:26px;color:#fff;line-height:1.3;}
   header h1 span{color:var(--gold-light);}
   .header-sub{position:relative;color:rgba(255,255,255,0.45);font-size:11px;letter-spacing:2px;margin-top:8px;}
-
-  /* WARNING */
   .warning-banner{background:var(--red);color:#fff;text-align:center;padding:10px 16px;font-size:13px;font-weight:500;line-height:1.6;}
-
-  /* LOGISTICS */
   .logistics{background:#1A1208;color:rgba(255,255,255,0.85);padding:14px 18px;font-size:13px;line-height:1.85;border-bottom:2px solid var(--gold);}
   .logistics h2{font-family:'Noto Serif TC',serif;font-weight:700;font-size:13px;color:var(--gold-light);letter-spacing:1px;margin-bottom:9px;}
   .logistics li{list-style:none;padding-left:14px;position:relative;margin-bottom:5px;}
   .logistics li::before{content:'▸';position:absolute;left:0;color:var(--gold);font-size:10px;top:3px;}
   .logistics strong{color:#fff;}
-
-  /* TAB BAR */
   .tab-bar{display:flex;background:#fff;border-bottom:2px solid var(--border);position:sticky;top:0;z-index:20;}
   .tab-btn{flex:1;padding:12px 6px;font-family:'Noto Serif TC',serif;font-weight:700;font-size:12px;text-align:center;cursor:pointer;border:none;background:transparent;color:var(--warm-gray);letter-spacing:1px;transition:all .2s;border-bottom:3px solid transparent;margin-bottom:-2px;line-height:1.4;}
   .tab-btn.active{color:var(--ink);border-bottom-color:var(--gold);}
-  .tab-btn.alt-tab{color:var(--warm-gray);}
   .tab-btn.alt-tab.active{color:var(--alt);border-bottom-color:var(--alt);}
-
-  /* PANELS */
   .tab-panel{display:none;}
   .tab-panel.active{display:block;}
-
-  /* MAIN */
   main{padding:0 0 56px;}
-
-  /* DAY HEADER */
   .day-header{display:flex;align-items:stretch;position:sticky;top:47px;z-index:10;}
-  .day-num{writing-mode:vertical-rl;text-orientation:mixed;font-family:'Noto Serif TC',serif;font-weight:900;font-size:12px;letter-spacing:2px;padding:12px 9px;color:#fff;flex-shrink:0;}
+  .day-num{writing-mode:vertical-rl;font-family:'Noto Serif TC',serif;font-weight:900;font-size:12px;letter-spacing:2px;padding:12px 9px;color:#fff;flex-shrink:0;}
   .day-info{flex:1;padding:10px 14px;display:flex;flex-direction:column;justify-content:center;}
   .day-info .day-date{font-family:'Noto Serif TC',serif;font-weight:700;font-size:17px;color:#fff;line-height:1.2;}
-  .day-info .day-desc{font-size:11px;color:rgba(255,255,255,0.6);margin-top:3px;letter-spacing:0.5px;}
+  .day-info .day-desc{font-size:11px;color:rgba(255,255,255,0.6);margin-top:3px;}
   .day-header.d1{background:var(--day1);} .day-header.d1 .day-num{background:rgba(0,0,0,0.2);}
   .day-header.d2{background:var(--day2);} .day-header.d2 .day-num{background:rgba(0,0,0,0.2);}
   .day-header.d3{background:var(--day3);} .day-header.d3 .day-num{background:rgba(0,0,0,0.2);}
   .day-header.dalt{background:var(--alt);} .day-header.dalt .day-num{background:rgba(0,0,0,0.2);}
-
-  /* TIMELINE */
+  .day-header.dalt2{background:var(--alt2);} .day-header.dalt2 .day-num{background:rgba(0,0,0,0.2);}
   .timeline{padding:12px 14px 6px;}
-  .tl-item{display:grid;grid-template-columns:54px 1fr;margin-bottom:6px;position:relative;}
+  .tl-item{display:grid;grid-template-columns:54px 1fr;margin-bottom:6px;}
   .tl-time{padding-top:14px;padding-right:9px;text-align:right;}
   .tb{display:inline-block;background:var(--ink);color:var(--gold-light);font-size:10px;font-weight:500;padding:3px 5px;border-radius:4px;white-space:nowrap;}
-  .tl-item.hl .tb{background:var(--gold);color:var(--ink);}
   .tl-item.d1c .tb{background:var(--day1);color:#fff;}
   .tl-item.d2c .tb{background:var(--day2);color:#fff;}
   .tl-item.d3c .tb{background:var(--day3);color:#fff;}
   .tl-item.altc .tb{background:var(--alt);color:#fff;}
-
+  .tl-item.alt2c .tb{background:var(--alt2);color:#fff;}
   .tl-body{border-left:2px solid var(--border);padding:10px 0 10px 12px;position:relative;}
   .tl-body::before{content:'';position:absolute;left:-5px;top:17px;width:8px;height:8px;border-radius:50%;background:var(--cream);border:2px solid var(--border);}
-  .tl-item.hl  .tl-body::before{background:var(--gold);border-color:var(--gold);}
   .tl-item.d1c .tl-body::before{background:var(--day1);border-color:var(--day1);}
   .tl-item.d2c .tl-body::before{background:var(--day2);border-color:var(--day2);}
   .tl-item.d3c .tl-body::before{background:var(--day3);border-color:var(--day3);}
   .tl-item.altc .tl-body::before{background:var(--alt);border-color:var(--alt);}
-
-  /* EVENT CARD */
+  .tl-item.alt2c .tl-body::before{background:var(--alt2);border-color:var(--alt2);}
   .ec{background:var(--card-bg);border:1px solid var(--border);border-radius:10px;padding:12px 14px;}
   .ec.gold{background:linear-gradient(135deg,#FFF8EC,#FFF0D6);border-color:var(--gold);}
   .ec.cool{background:#EFF8F7;border-color:#A8D5CF;}
   .ec.hot{background:#FDF0F0;border-color:#EAADAD;}
   .ec.navy{background:#EEF0F8;border-color:#A0AACC;}
   .ec.purple{background:#F5EFF8;border-color:#C9A8E0;}
-
+  .ec.blue{background:#EAF2F8;border-color:#9DC3E0;}
   .ec-title{font-family:'Noto Serif TC',serif;font-weight:700;font-size:15px;margin-bottom:6px;line-height:1.4;}
   .ec-body{font-size:14px;color:var(--text-body);line-height:1.85;}
   .ec-body strong{color:var(--ink);font-weight:500;}
   .ec-body .red{color:var(--red);font-weight:500;}
   .ec-body .grn{color:var(--teal);font-weight:500;}
   .ec-body .pur{color:var(--alt);font-weight:500;}
-
-  /* SUB ITEMS */
+  .ec-body .blu{color:var(--alt2);font-weight:500;}
   .subs{margin-top:9px;display:flex;flex-direction:column;gap:7px;}
   .si{background:rgba(255,255,255,0.8);border-left:3px solid var(--gold);padding:9px 12px;border-radius:0 8px 8px 0;font-size:13px;color:var(--text-body);line-height:1.8;}
   .si strong{color:var(--ink);}
-  .si.purple-bar{border-left-color:var(--alt);}
+  .si.pb{border-left-color:var(--alt);}
+  .si.bb{border-left-color:var(--alt2);}
   .sno{display:inline-block;background:var(--gold);color:#fff;font-size:10px;font-weight:700;padding:1px 6px;border-radius:3px;margin-right:4px;}
   .wt{display:inline-block;background:var(--teal);color:#fff;font-size:10px;padding:1px 7px;border-radius:10px;margin-left:3px;}
-
-  /* BADGE */
   .badge{display:inline-flex;align-items:center;background:#E8F5E9;color:#2E7D32;font-size:11px;padding:3px 10px;border-radius:20px;border:1px solid #A5D6A7;margin-top:8px;}
-  .badge.alt{background:#F3EAF9;color:var(--alt);border-color:#C9A8E0;}
-
-  /* SECTION LABEL */
   .section-label{display:flex;align-items:center;gap:10px;margin:22px 14px 12px;}
   .section-label .ll{flex:1;height:1px;background:var(--border);}
   .section-label span{font-size:11px;letter-spacing:3px;color:var(--warm-gray);font-weight:500;white-space:nowrap;}
-
-  /* PREP GRID */
   .prep-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;padding:0 14px;}
   .prep-card{background:var(--card-bg);border:1px solid var(--border);border-radius:10px;padding:13px 12px;}
   .prep-card .icon{font-size:20px;margin-bottom:6px;display:block;}
@@ -165,8 +127,6 @@
   .prep-card p,.prep-card li{font-size:13px;color:var(--text-body);line-height:1.8;}
   .prep-card ul{list-style:none;}
   .prep-card li::before{content:'· ';color:var(--gold);}
-
-  /* BUDGET TABLE */
   .budget-wrap{padding:0 14px;}
   .budget-table{width:100%;border-collapse:collapse;font-size:13px;}
   .budget-table th{background:var(--ink);color:var(--gold-light);font-family:'Noto Serif TC',serif;font-weight:700;padding:9px 12px;text-align:left;font-size:12px;letter-spacing:1px;}
@@ -175,10 +135,7 @@
   .budget-table td:last-child{text-align:right;font-weight:500;color:var(--ink);white-space:nowrap;}
   .budget-total{background:var(--ink);color:var(--gold-light);padding:13px 16px;border-radius:0 0 10px 10px;font-size:14px;font-family:'Noto Serif TC',serif;font-weight:700;display:flex;justify-content:space-between;align-items:center;}
   .budget-total span{font-size:17px;color:#fff;}
-  .budget-total.alt-total{background:var(--alt);}
   .budget-note{font-size:11px;color:var(--warm-gray);padding:7px 2px;line-height:1.6;}
-
-  /* RULES */
   .rules-wrap{padding:0 14px;}
   .rules{display:flex;flex-direction:column;gap:10px;}
   .rule{background:var(--card-bg);border:1px solid var(--border);border-radius:10px;padding:14px;display:grid;grid-template-columns:35px 1fr;gap:11px;align-items:start;}
@@ -187,231 +144,329 @@
   .rbody p{font-size:13px;color:var(--text-body);line-height:1.85;}
   .goalbox{background:var(--ink);color:var(--gold-light);padding:11px 13px;border-radius:8px;font-size:14px;margin-top:8px;font-family:'Noto Serif TC',serif;line-height:1.85;}
   .goalbox small{display:block;font-size:11px;opacity:.65;margin-top:3px;}
-
-  /* ALT NOTE BOX */
   .alt-note{background:#F5EFF8;border:1px solid #C9A8E0;border-radius:10px;padding:14px 16px;margin:0 14px;font-size:13px;color:#3D1A5A;line-height:1.85;}
   .alt-note strong{color:var(--alt);}
-
+  .subgroup-tabs{display:flex;gap:8px;padding:0 14px 14px;}
+  .subgroup-tab-btn{flex:1;padding:9px 8px;border-radius:8px;border:1px solid var(--border);background:var(--card-bg);font-family:'Noto Serif TC',serif;font-weight:700;font-size:12px;text-align:center;cursor:pointer;color:var(--warm-gray);}
+  .subgroup-tab-btn.active.subA{background:var(--alt);color:#fff;border-color:var(--alt);}
+  .subgroup-tab-btn.active.subB{background:var(--alt2);color:#fff;border-color:var(--alt2);}
+  .subgroup-panel{display:none;}
+  .subgroup-panel.active{display:block;}
   footer{text-align:center;padding:20px 16px;font-size:11px;color:var(--warm-gray);letter-spacing:2px;border-top:1px solid var(--border);}
+
+  /* COMPACT TIMELINE CARDS */
+  .ec.compact{cursor:pointer;padding:10px 14px;transition:transform .1s;}
+  .ec.compact:active{transform:scale(0.98);}
+  .ec-title-row{display:flex;justify-content:space-between;align-items:center;gap:8px;}
+  .ec-title-row .ec-title{margin-bottom:0;flex:1;}
+  .ec-summary{font-size:12px;color:var(--text-body);opacity:0.75;margin-top:3px;line-height:1.6;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+  .detail-btn{flex-shrink:0;background:var(--gold);color:#fff;border:none;border-radius:14px;padding:4px 10px;font-size:11px;font-weight:700;cursor:pointer;white-space:nowrap;}
+  .detail-btn:active{opacity:0.7;}
+
+  /* MODAL */
+  .modal-overlay{display:none;position:fixed;inset:0;background:rgba(20,14,8,0.55);z-index:100;align-items:flex-end;justify-content:center;}
+  .modal-overlay.show{display:flex;}
+  .modal-box{background:var(--cream);width:100%;max-width:480px;max-height:80vh;overflow-y:auto;border-radius:18px 18px 0 0;padding:24px 20px 32px;position:relative;animation:slideUp .25s ease-out;}
+  @media(min-width:700px){
+    .modal-overlay{align-items:center;}
+    .modal-box{border-radius:18px;max-width:520px;}
+  }
+  @keyframes slideUp{from{transform:translateY(30px);opacity:0;}to{transform:translateY(0);opacity:1;}}
+  .modal-close{position:absolute;top:14px;right:14px;background:var(--border);border:none;width:28px;height:28px;border-radius:50%;font-size:14px;color:var(--ink);cursor:pointer;}
+  .modal-time{display:inline-block;background:var(--ink);color:var(--gold-light);font-size:12px;font-weight:500;padding:4px 10px;border-radius:6px;margin-bottom:10px;}
+  .modal-title{font-size:18px;margin-bottom:12px;padding-right:30px;}
+  .modal-box .ec-body{font-size:14px;}
+  .modal-box .subs{margin-top:10px;}
+  .ticket-guide-btn{width:100%;background:var(--ink);color:var(--gold-light);border:none;border-radius:10px;padding:14px 16px;font-size:13px;font-weight:500;text-align:left;cursor:pointer;display:flex;align-items:center;justify-content:space-between;}
+  .ticket-guide-btn:active{opacity:0.8;}
 </style>
 </head>
 <body>
-
-<div class="container"><header>
+<div class="container">
+<header>
   <div class="header-tag">6人 · 三天兩夜 · 終極版</div>
   <h1>上海三天兩夜<br><span>完整行程攻略</span></h1>
   <p class="header-sub">7/12（日）· 7/13（一）· 7/14（二）</p>
 </header>
-
 <div class="warning-banner">⚠️ 7月核心原則：極熱 · 極擠 · 要提早 · 要用錢換時間</div>
-
 <div class="logistics">
   <h2>🚗 交通與行李核心策略</h2>
   <ul>
-    <li><strong>人員分組：</strong>Rian＋Jelian（果兒）＋Redd＋忻禹＋李子 從海鹽出發；Jack 在天文館碰面（Plan A）或迪士尼酒店碰面（Plan B）</li>
-    <li><strong>7/12 去程：</strong>5人一台滴滴商務車（海鹽→天文館）；天文館會合 Jack 後共 6人，換叫 7座車前往迪士尼酒店</li>
+    <li><strong>住宿軌跡：</strong>7/7-7/11 海鹽開元森泊酒店（橋牌交流活動）→ 7/11-7/12 上海浦西萬怡酒店 → 7/12-7/14 迪士尼玩具總動員酒店</li>
+    <li><strong>7/11 下午：</strong>約 14:30 離開海鹽縣博物館，5人搭車前往上海浦西萬怡酒店（車程約1小時45分）；Jack 改搭早班機，約 15:00 已抵達酒店等候</li>
+    <li><strong>7/11 晚上：</strong>全員6人 17:00 準時前往人和館・上海菜（靜安寺店，愚園路142號），距離萬怡酒店約 10 分鐘車程</li>
+    <li><strong>7/12 白天：</strong>從萬怡酒店帶**全部行李**出發前往天文館寄物，玩到16:00直接搭車前往迪士尼酒店（不再回市區）</li>
     <li><strong>住宿分房：</strong>玩具總動員酒店 4人房（Rian家）＋ 2人房（忻禹＋李子），費用分開計算</li>
     <li><strong>7/13 不退房：</strong>迪士尼全日決戰，行李原封不動放房間</li>
     <li><strong>7/14 回程：</strong>6人共乘 7座滴滴商務車前往浦東機場</li>
   </ul>
 </div>
-
-<!-- TAB BAR -->
 <div class="tab-bar">
   <button class="tab-btn active" onclick="switchTab('plan-a')">🔭 Plan A<br>天文館路線</button>
   <button class="tab-btn alt-tab" onclick="switchTab('plan-b')">🏙 Plan B<br>市區備案路線</button>
 </div>
-
 <main>
 
-<!-- ══════════════════════════════
-     PLAN A
-══════════════════════════════ -->
+<!-- ══════════════ PLAN A ══════════════ -->
 <div id="plan-a" class="tab-panel active">
 
-<!-- DAY 1A -->
-<div class="day-header d1">
+<div class="day-header dalt2">
   <div class="day-num">第一天</div>
   <div class="day-info">
+    <div class="day-date">7/11（週六）</div>
+    <div class="day-desc">海鹽橋牌活動結束 → 上海浦西萬怡酒店 → 人和館晚餐</div>
+  </div>
+</div>
+<div class="timeline">
+
+  <div class="tl-item">
+    <div class="tl-time"><span class="tb">15:00</span></div>
+    <div class="tl-body"><div class="ec compact" onclick="openModal('modal1')">
+      <div class="ec-title-row">
+        <div class="ec-title">🌉 14:30 離開海鹽縣博物館</div>
+        <button class="detail-btn" onclick="openModal('modal1')">詳情 ›</button>
+      </div>
+      <p class="ec-summary">橋牌交流活動全部結束</p>
+    </div></div>
+  </div>
+
+  <div class="tl-item alt2c">
+    <div class="tl-time"><span class="tb">14:30</span></div>
+    <div class="tl-body"><div class="ec blue compact" onclick="openModal('modal2')">
+      <div class="ec-title-row">
+        <div class="ec-title">🚗 滴滴商務車 · 前往上海浦西萬怡酒店</div>
+        <button class="detail-btn" onclick="openModal('modal2')">詳情 ›</button>
+      </div>
+      <p class="ec-summary">5人＋全部行李，叫 7座商務車，途經杭州灣環線高速、滬昆高速。</p>
+    </div></div>
+  </div>
+
+  <div class="tl-item alt2c">
+    <div class="tl-time"><span class="tb">16:15</span></div>
+    <div class="tl-body"><div class="ec blue compact" onclick="openModal('modal3')">
+      <div class="ec-title-row">
+        <div class="ec-title">🏨 上海浦西萬怡酒店 Check-in</div>
+        <button class="detail-btn" onclick="openModal('modal3')">詳情 ›</button>
+      </div>
+      <p class="ec-summary">5人抵達辦理入住、放行李、簡單梳洗</p>
+    </div></div>
+  </div>
+
+  <div class="tl-item">
+    <div class="tl-time"><span class="tb">18:00</span></div>
+    <div class="tl-body"><div class="ec compact" onclick="openModal('modal4')">
+      <div class="ec-title-row">
+        <div class="ec-title">🍽️ 6人前往人和館・上海菜</div>
+        <button class="detail-btn" onclick="openModal('modal4')">詳情 ›</button>
+      </div>
+      <p class="ec-summary">步行叫車約10分鐘抵達，17:00訂位</p>
+    </div></div>
+  </div>
+
+  <div class="tl-item alt2c">
+    <div class="tl-time"><span class="tb">17:00</span></div>
+    <div class="tl-body"><div class="ec blue compact" onclick="openModal('modal5')">
+      <div class="ec-title-row">
+        <div class="ec-title">🍜 人和館晚餐</div>
+        <button class="detail-btn" onclick="openModal('modal5')">詳情 ›</button>
+      </div>
+      <p class="ec-summary">米其林本幫菜，約¥180/人</p>
+    </div></div>
+  </div>
+
+  <div class="tl-item">
+    <div class="tl-time"><span class="tb">21:00</span></div>
+    <div class="tl-body"><div class="ec compact" onclick="openModal('modal6')">
+      <div class="ec-title-row">
+        <div class="ec-title">🚗 餐後返回萬怡酒店</div>
+        <button class="detail-btn" onclick="openModal('modal6')">詳情 ›</button>
+      </div>
+      <p class="ec-summary">外灘 → 上海浦西萬怡酒店</p>
+    </div></div>
+  </div>
+
+</div><!-- /timeline day1-A -->
+
+
+<div class="day-header d1">
+  <div class="day-num">第二天</div>
+  <div class="day-info">
     <div class="day-date">7/12（週日）</div>
-    <div class="day-desc">海鹽出發 → 上海天文館 → 入住迪士尼酒店</div>
+    <div class="day-desc">萬怡酒店出發 → 上海天文館 → 入住迪士尼酒店</div>
   </div>
 </div>
 <div class="timeline">
 
   <div class="tl-item">
     <div class="tl-time"><span class="tb">06:30</span></div>
-    <div class="tl-body"><div class="ec">
-      <div class="ec-title">🧳 海鹽賓館退房</div>
-      <p class="ec-body">辦理退房，行李推至大廳。前一天在超商備好早餐，此時整裝備好冰水出發。<br><span class="grn">住宿軌跡：7/7-7/11 海鹽開源森泊酒店 → 7/11-7/12 海鹽賓館</span></p>
-      <div class="subs">
-        <div class="si">📍 浙江省嘉興市海鹽縣海濱東路35號（郵編 314300）</div>
+    <div class="tl-body"><div class="ec compact" onclick="openModal('modal7')">
+      <div class="ec-title-row">
+        <div class="ec-title">🧳 萬怡酒店退房</div>
+        <button class="detail-btn" onclick="openModal('modal7')">詳情 ›</button>
       </div>
+      <p class="ec-summary">辦理退房，帶上全部行李（今晚直接入住迪士尼酒店，不回市區）。整裝備好…</p>
     </div></div>
   </div>
 
   <div class="tl-item d1c">
     <div class="tl-time"><span class="tb">07:30</span></div>
-    <div class="tl-body"><div class="ec gold">
-      <div class="ec-title">🚗 第一趟滴滴商務車出發（5人）</div>
-      <p class="ec-body">走沈海高速 + 上海繞城高速。Jack 另行前往天文館會合。</p>
-      <div class="subs">
-        <div class="si">👥 Rian・Jelian・Redd・忻禹・李子</div>
-        <div class="si">📍 123.4 公里 · 約 26 個紅綠燈</div>
-        <div class="si">⏱ 車程 <strong>1小時48分</strong>，車資約 <strong>¥405</strong></div>
+    <div class="tl-body"><div class="ec gold compact" onclick="openModal('modal8')">
+      <div class="ec-title-row">
+        <div class="ec-title">🚗 滴滴商務車出發（6人）</div>
+        <button class="detail-btn" onclick="openModal('modal8')">詳情 ›</button>
       </div>
+      <p class="ec-summary">全員6人＋全部行李，叫 7座商務車，途經外環高速、滬蘆高速。</p>
     </div></div>
   </div>
 
   <div class="tl-item">
-    <div class="tl-time"><span class="tb">09:18</span></div>
-    <div class="tl-body"><div class="ec hot">
-      <div class="ec-title">🔭 抵達上海天文館（滴水湖）</div>
-      <p class="ec-body">距 09:30 開館約 12 分鐘，把台胞證收好，準備排隊檢票進館。</p>
+    <div class="tl-time"><span class="tb">08:59</span></div>
+    <div class="tl-body"><div class="ec hot compact" onclick="">
+      <div class="ec-title-row">
+        <div class="ec-title">🔭 抵達上海天文館（滴水湖）</div>
+        
+      </div>
+      <p class="ec-summary">距 09:30 開館約半小時，把台胞證收好，準備排隊檢票進館。</p>
     </div></div>
   </div>
 
   <div class="tl-item d1c">
     <div class="tl-time"><span class="tb">09:30</span></div>
-    <div class="tl-body"><div class="ec gold">
-      <div class="ec-title">🎟️ 檢票進館，行李寄存</div>
-      <p class="ec-body">把行李推去寄存區鎖好。<span class="pur">本次重點是 8K 球幕影院，「飛越銀河系」「航向火星」展項預約意願較低，不特別搶。</span></p>
+    <div class="tl-body"><div class="ec gold compact" onclick="openModal('modal10')">
+      <div class="ec-title-row">
+        <div class="ec-title">🎟️ 檢票進館，全部行李寄存</div>
+        <button class="detail-btn" onclick="openModal('modal10')">詳情 ›</button>
+      </div>
+      <p class="ec-summary">把全部行李推去寄存區鎖好（今天行李會一路跟著到晚上）</p>
     </div></div>
   </div>
 
   <div class="tl-item d1c">
     <div class="tl-time"><span class="tb">10:00</span></div>
-    <div class="tl-body"><div class="ec gold">
-      <div class="ec-title">🎬 球幕影院開放預約 · 立刻搶票</div>
-      <p class="ec-body">建築外觀那個巨大「懸浮球體」內部，超高解析度8K圓頂天幕，<span class="grn">本次行程的重點項目</span>。一進館先到 10:00 整，立刻打開「上海天文館」微信公眾號搶場次。</p>
-      <div class="subs">
-        <div class="si">票價約 <strong>¥40/人</strong>，需單獨購票</div>
-        <div class="si" style="border-left-color:var(--red)"><strong style="color:var(--red)">⚠️ 一個微信帳號最多買5張</strong>，6人要拆成兩個帳號分別搶（例如 Rian 帳號搶5張，第6張用 Jack 或忻禹的帳號）</div>
-        <div class="si">一個證件只能買一張票，每場約150人，全天共7個場次</div>
-        <div class="si">若 7/9 已提前加購到票，直接依場次時間安插下方行程</div>
+    <div class="tl-body"><div class="ec gold compact" onclick="openModal('modal11')">
+      <div class="ec-title-row">
+        <div class="ec-title">🎬 球幕影院開放預約 · 立刻搶票</div>
+        <button class="detail-btn" onclick="openModal('modal11')">詳情 ›</button>
       </div>
+      <p class="ec-summary">建築外觀那個巨大「懸浮球體」內部</p>
     </div></div>
   </div>
 
   <div class="tl-item d1c">
     <div class="tl-time"><span class="tb">10:15</span></div>
-    <div class="tl-body"><div class="ec gold">
-      <div class="ec-title">🌍 第一站【家園】展區（1F）</div>
-      <p class="ec-body">搶完球幕影院票後，<span class="grn">拒絕走馬看花</span>，這層是硬核青少年逛法的起點：</p>
-      <div class="subs">
-        <div class="si"><span class="sno">必看</span><strong>巨大懸浮地球模型</strong>（內為天象廳）— 太陽系八大行星動態重力場，視覺最震撼</div>
-        <div class="si"><span class="sno">高一看點</span>極光、火山、地球磁場成因展示 — <strong>Jelian</strong> 可直接對照高中地科「地球構造」與「光學現象」</div>
+    <div class="tl-body"><div class="ec gold compact" onclick="openModal('modal12')">
+      <div class="ec-title-row">
+        <div class="ec-title">🌍 第一站【家園】展區（1F）</div>
+        <button class="detail-btn" onclick="openModal('modal12')">詳情 ›</button>
       </div>
+      <p class="ec-summary">搶完球幕影院票後，拒絕走馬看花，這層是硬核青少年逛法的起點：</p>
     </div></div>
   </div>
 
   <div class="tl-item d1c">
     <div class="tl-time"><span class="tb">11:00</span></div>
-    <div class="tl-body"><div class="ec gold">
-      <div class="ec-title">🌌 第二站【宇宙】展區（2F）· 快速版</div>
-      <p class="ec-body">硬核物理與時空跨界，<span class="red">時間有限只抓最強亮點：</span></p>
-      <div class="subs">
-        <div class="si"><span class="sno">必看</span><strong>時空裂縫 ＋ 黑洞視覺化裝置</strong> — 廣義相對論的時空彎曲互動牆，<strong>Jelian・Redd</strong> 剛好都在接觸基礎物理階段</div>
+    <div class="tl-body"><div class="ec gold compact" onclick="openModal('modal13')">
+      <div class="ec-title-row">
+        <div class="ec-title">🌌 第二站【宇宙】展區（2F）· 快速版</div>
+        <button class="detail-btn" onclick="openModal('modal13')">詳情 ›</button>
       </div>
+      <p class="ec-summary">硬核物理與時空跨界，時間有限只抓最強亮點：</p>
     </div></div>
   </div>
 
   <div class="tl-item">
     <div class="tl-time"><span class="tb">12:00</span></div>
-    <div class="tl-body"><div class="ec hot">
-      <div class="ec-title">🍽️ 館內午餐充電</div>
-      <p class="ec-body">Jack 已在天文館會合，全員6人集合。館內「銀河餐廳」或咖啡廳，<strong>太空人造型冰淇淋</strong>是必吃，6人簡餐約 <strong>¥360</strong>。</p>
+    <div class="tl-body"><div class="ec hot compact" onclick="">
+      <div class="ec-title-row">
+        <div class="ec-title">🍽️ 館內午餐充電</div>
+        
+      </div>
+      <p class="ec-summary">館內「銀河餐廳」或咖啡廳</p>
     </div></div>
   </div>
 
   <div class="tl-item d1c">
     <div class="tl-time"><span class="tb">13:00</span></div>
-    <div class="tl-body"><div class="ec gold">
-      <div class="ec-title">🚀 第三站【征程】展區（3F）· 快速版</div>
-      <p class="ec-body">國家科技力與歷史模聯感，<span class="red">只衝這一個必看項目：</span></p>
-      <div class="subs">
-        <div class="si"><span class="sno">必看</span><strong>1:1 天和核心艙實景</strong> — 走進去看太空人如何睡覺、上廁所、做實驗。<strong>Jelian 身為模聯社成員</strong>，可在現場簡短聊聊美蘇太空競賽、大國科技博弈背後的國際政治</div>
+    <div class="tl-body"><div class="ec gold compact" onclick="openModal('modal15')">
+      <div class="ec-title-row">
+        <div class="ec-title">🚀 第三站【征程】展區（3F）· 快速版</div>
+        <button class="detail-btn" onclick="openModal('modal15')">詳情 ›</button>
       </div>
+      <p class="ec-summary">國家科技力與歷史模聯感，只衝這一個必看項目：</p>
     </div></div>
   </div>
 
   <div class="tl-item">
     <div class="tl-time"><span class="tb">14:00</span></div>
-    <div class="tl-body"><div class="ec cool">
-      <div class="ec-title">🎬 球幕影院場次（依預約時間入場）</div>
-      <p class="ec-body">依 10:00 搶到的實際場次時間入場觀看，<span class="grn">視覺震撼度最符合青少年胃口</span>，整個人像漂浮在宇宙中。約40分鐘場次。</p>
+    <div class="tl-body"><div class="ec cool compact" onclick="openModal('modal16')">
+      <div class="ec-title-row">
+        <div class="ec-title">🎬 球幕影院場次（依預約時間入場）</div>
+        <button class="detail-btn" onclick="openModal('modal16')">詳情 ›</button>
+      </div>
+      <p class="ec-summary">依 10:00 搶到的實際場次時間入場觀看</p>
     </div></div>
   </div>
 
   <div class="tl-item">
     <div class="tl-time"><span class="tb">14:50</span></div>
-    <div class="tl-body"><div class="ec">
-      <div class="ec-title">🛍️ 1F 文創商店 · 快閃採購</div>
-      <p class="ec-body"><strong>太空盲盒、隕石碎片標本、星空書籤</strong> — 高中生和國中生都會很有興趣，是這趟的紀念品首選。<span class="red">控制在15分鐘內</span>。</p>
+    <div class="tl-body"><div class="ec compact" onclick="openModal('modal17')">
+      <div class="ec-title-row">
+        <div class="ec-title">🛍️ 1F 文創商店 · 快閃採購</div>
+        <button class="detail-btn" onclick="openModal('modal17')">詳情 ›</button>
+      </div>
+      <p class="ec-summary">太空盲盒、隕石碎片標本、星空書籤 — 高中生和國中生都會很有興趣</p>
     </div></div>
   </div>
 
   <div class="tl-item d1c">
     <div class="tl-time"><span class="tb">15:30</span></div>
-    <div class="tl-body"><div class="ec gold">
-      <div class="ec-title">🧳 提領行李，準時離館</div>
-      <p class="ec-body">從寄存區取回所有行李，<span class="grn">15:30準時走出天文館大門</span>，避開傍晚下班人潮。</p>
+    <div class="tl-body"><div class="ec gold compact" onclick="">
+      <div class="ec-title-row">
+        <div class="ec-title">🧳 提領全部行李，準時離館</div>
+        
+      </div>
+      <p class="ec-summary">從寄存區取回所有行李，15:30準時走出天文館大門。</p>
     </div></div>
   </div>
 
   <div class="tl-item d1c">
     <div class="tl-time"><span class="tb">16:00</span></div>
-    <div class="tl-body"><div class="ec gold">
-      <div class="ec-title">🚗 第二趟滴滴商務車（6人·7座）</div>
-      <p class="ec-body">全員6人＋行李，叫 <strong>7座商務車</strong>，天文館 → 玩具總動員酒店。</p>
-      <div class="subs">
-        <div class="si">📍 47.4 公里 · 約 14 個紅綠燈</div>
-        <div class="si">⏱ 車程 <strong>約53分鐘</strong>，途經申港大道、滬蘆高速</div>
+    <div class="tl-body"><div class="ec gold compact" onclick="openModal('modal19')">
+      <div class="ec-title-row">
+        <div class="ec-title">🚗 滴滴商務車（6人·7座）· 直奔迪士尼</div>
+        <button class="detail-btn" onclick="openModal('modal19')">詳情 ›</button>
       </div>
+      <p class="ec-summary">全員6人＋全部行李</p>
     </div></div>
   </div>
 
   <div class="tl-item">
     <div class="tl-time"><span class="tb">16:53</span></div>
-    <div class="tl-body"><div class="ec">
-      <div class="ec-title">🏨 入住 ＋ 換裝</div>
-      <p class="ec-body"><span class="grn">仍趕在「約五點前抵達」目標內</span>。放行李、簡單換裝，準備出發外灘吃晚餐。</p>
-    </div></div>
-  </div>
-
-  <div class="tl-item d1c">
-    <div class="tl-time"><span class="tb">17:45</span></div>
-    <div class="tl-body"><div class="ec gold">
-      <div class="ec-title">🚗 第三趟滴滴・前往外灘晚餐</div>
-      <p class="ec-body">6人＋忻禹李子，叫 <strong>7座商務車</strong>前往「<strong>3號倉庫·創意中國菜</strong>」（城隍廟·豫園商圈附近）。</p>
-      <div class="subs">
-        <div class="si">📍 28.0 公里 · 約 15 個紅綠燈</div>
-        <div class="si">⏱ 車程 <strong>約37分鐘</strong>，途經羅山高架路、內環高架路</div>
+    <div class="tl-body"><div class="ec compact" onclick="">
+      <div class="ec-title-row">
+        <div class="ec-title">🏨 入住玩具總動員酒店</div>
+        
       </div>
+      <p class="ec-summary">放行李、換裝、稍作休息。晚餐簡化安排，直接在酒店或迪士尼小鎮解決。</p>
     </div></div>
   </div>
 
   <div class="tl-item d1c">
-    <div class="tl-time"><span class="tb">18:22</span></div>
-    <div class="tl-body"><div class="ec cool">
-      <div class="ec-title">🌆 3號倉庫晚餐 ＋ 外灘夜景漫步</div>
-      <p class="ec-body">6人晚餐約 <strong>¥600</strong>（Rian家4人 ¥400 / 忻禹李子 ¥200）。<span class="grn">夜幕降臨後的萬國建築與對岸陸家嘴燈光，是這趟最值得拍的夜景之一。</span>預計逛到 21:00 再搭車回酒店。</p>
+    <div class="tl-time"><span class="tb">18:30</span></div>
+    <div class="tl-body"><div class="ec cool compact" onclick="openModal('modal21')">
+      <div class="ec-title-row">
+        <div class="ec-title">🍝 酒店或迪士尼小鎮晚餐</div>
+        <button class="detail-btn" onclick="openModal('modal21')">詳情 ›</button>
+      </div>
+      <p class="ec-summary">6人簡餐約 ¥600（Rian家4人 ¥400 / 忻禹李子 ¥200）</p>
     </div></div>
   </div>
 
-  <div class="tl-item">
-    <div class="tl-time"><span class="tb">21:00</span></div>
-    <div class="tl-body"><div class="ec">
-      <div class="ec-title">🚗 第四趟滴滴・返回酒店</div>
-      <p class="ec-body">外灘 → 玩具總動員酒店，車程約 <strong>37分鐘</strong>，約 <strong>21:37</strong> 抵達。<span class="red">提醒：明天 06:30 就要起床、07:15 出發，回房後盡快洗澡入睡</span>，為迪士尼決戰儲備體力。</p>
-    </div></div>
-  </div>
+</div><!-- /timeline day2-A -->
 
-</div><!-- /timeline day1a -->
 
-<!-- DAY 2 (shared) -->
 <div class="day-header d2">
-  <div class="day-num">第二天</div>
+  <div class="day-num">第三天</div>
   <div class="day-info">
     <div class="day-date">7/13（週一）</div>
     <div class="day-desc">迪士尼全日不換房決戰・週一人潮黃金期</div>
@@ -421,82 +476,97 @@
 
   <div class="tl-item">
     <div class="tl-time"><span class="tb">06:30</span></div>
-    <div class="tl-body"><div class="ec">
-      <div class="ec-title">🍳 起床用早點（不退房）</div>
-      <p class="ec-body">行李原封不動留在房間。帶上 <span class="red">台胞證正本</span>，準備出發。</p>
+    <div class="tl-body"><div class="ec compact" onclick="">
+      <div class="ec-title-row">
+        <div class="ec-title">🍳 起床用早點（不退房）</div>
+        
+      </div>
+      <p class="ec-summary">行李原封不動留在房間。帶上 台胞證正本，準備出發。</p>
     </div></div>
   </div>
 
   <div class="tl-item d2c">
     <div class="tl-time"><span class="tb">07:15</span></div>
-    <div class="tl-body"><div class="ec gold">
-      <div class="ec-title">🚌 搭酒店第一班專屬接駁車</div>
-      <p class="ec-body">從迪士尼小鎮通道提前入園。此時一般遊客還在門外排 2 小時安檢，<span class="grn">你們已在刷台胞證進園。</span></p>
-      <div class="badge">✓ 住客提前1小時入園已核實</div>
+    <div class="tl-body"><div class="ec gold compact" onclick="openModal('modal23')">
+      <div class="ec-title-row">
+        <div class="ec-title">🚌 搭酒店第一班專屬接駁車</div>
+        <button class="detail-btn" onclick="openModal('modal23')">詳情 ›</button>
+      </div>
+      <p class="ec-summary">從迪士尼小鎮通道提前入園</p>
     </div></div>
   </div>
 
   <div class="tl-item d2c">
     <div class="tl-time"><span class="tb">07:30</span></div>
-    <div class="tl-body"><div class="ec gold">
-      <div class="ec-title">⚡ 黃金一小時 · 狂刷大魔王</div>
-      <p class="ec-body"><span class="red">進園後不要在門口拍照</span>，快步直奔明日世界。</p>
-      <div class="subs">
-        <div class="si"><span class="sno">第1站</span><strong>創極速光輪</strong><span class="wt">此時 5-10 分鐘</span><br>全球最快光速摩托車，晚來排 120 分鐘</div>
-        <div class="si"><span class="sno">第2站</span><strong>噴氣背包</strong><br>10分鐘內連刷兩個大魔王</div>
+    <div class="tl-body"><div class="ec gold compact" onclick="openModal('modal24')">
+      <div class="ec-title-row">
+        <div class="ec-title">⚡ 黃金一小時 · 狂刷大魔王</div>
+        <button class="detail-btn" onclick="openModal('modal24')">詳情 ›</button>
       </div>
+      <p class="ec-summary">進園後不要在門口拍照，快步直奔明日世界。</p>
     </div></div>
   </div>
 
   <div class="tl-item">
     <div class="tl-time"><span class="tb">08:30</span></div>
-    <div class="tl-body"><div class="ec hot">
-      <div class="ec-title">📲 加購尊享卡</div>
-      <p class="ec-body">App 加購 4人份「<strong>翱翔·飛越地平線</strong>」尊享卡，¥180×4 = <strong>¥720</strong>，免去室外排隊 2 小時。</p>
+    <div class="tl-body"><div class="ec hot compact" onclick="openModal('modal25')">
+      <div class="ec-title-row">
+        <div class="ec-title">📲 加購尊享卡</div>
+        <button class="detail-btn" onclick="openModal('modal25')">詳情 ›</button>
+      </div>
+      <p class="ec-summary">App 加購6人份「翱翔·飛越地平線」尊享卡</p>
     </div></div>
   </div>
 
   <div class="tl-item">
     <div class="tl-time"><span class="tb">08:45</span></div>
-    <div class="tl-body"><div class="ec">
-      <div class="ec-title">🦊 瘋狂動物城 Zootopia</div>
-      <p class="ec-body">刷完地平線後，前往最新園區體驗「<strong>熱力追蹤</strong>」。買 4 根爪爪棒冰，拍照兼降溫。</p>
+    <div class="tl-body"><div class="ec compact" onclick="">
+      <div class="ec-title-row">
+        <div class="ec-title">🦊 瘋狂動物城 Zootopia</div>
+        
+      </div>
+      <p class="ec-summary">刷完地平線後，前往最新園區體驗「熱力追蹤」。買爪爪棒冰，拍照兼降溫。</p>
     </div></div>
   </div>
 
   <div class="tl-item d2c">
     <div class="tl-time"><span class="tb">12:00</span></div>
-    <div class="tl-body"><div class="ec cool">
-      <div class="ec-title">❄️ 極致室內冷氣三部曲</div>
-      <p class="ec-body"><strong>午餐</strong>：寶藏灣 · 巴波薩燒烤，烤豬肋排（4人約 ¥800）</p>
-      <div class="subs">
-        <div class="si">連刷全室內「<strong>加勒比海盜</strong>」</div>
-        <div class="si">觀看《<strong>杰克船長惊天特技大冒險</strong>》室內冷氣劇場</div>
+    <div class="tl-body"><div class="ec cool compact" onclick="openModal('modal27')">
+      <div class="ec-title-row">
+        <div class="ec-title">❄️ 極致室內冷氣三部曲</div>
+        <button class="detail-btn" onclick="openModal('modal27')">詳情 ›</button>
       </div>
+      <p class="ec-summary">午餐：寶藏灣・巴波薩燒烤，烤豬肋排</p>
     </div></div>
   </div>
 
   <div class="tl-item">
     <div class="tl-time"><span class="tb">15:45</span></div>
-    <div class="tl-body"><div class="ec">
-      <div class="ec-title">🧚 下午溫馨場次</div>
-      <p class="ec-body">玩「<strong>小飛俠</strong>」，傍晚逛愛麗絲迷宮，城堡前拍夕陽全家福。</p>
+    <div class="tl-body"><div class="ec compact" onclick="">
+      <div class="ec-title-row">
+        <div class="ec-title">🧚 下午溫馨場次</div>
+        
+      </div>
+      <p class="ec-summary">玩「小飛俠」，傍晚逛愛麗絲迷宮，城堡前拍夕陽全家福。</p>
     </div></div>
   </div>
 
   <div class="tl-item d2c">
     <div class="tl-time"><span class="tb">19:30</span></div>
-    <div class="tl-body"><div class="ec gold">
-      <div class="ec-title">✨ 奇幻光影秀（煙火秀）</div>
-      <p class="ec-body">鎖定城堡正前方觀賞。看完優雅搭接駁車直接回酒店，洗熱水澡躺平。</p>
+    <div class="tl-body"><div class="ec gold compact" onclick="">
+      <div class="ec-title-row">
+        <div class="ec-title">✨ 奇幻光影秀（煙火秀）</div>
+        
+      </div>
+      <p class="ec-summary">鎖定城堡正前方觀賞。看完優雅搭接駁車直接回酒店，洗熱水澡躺平。</p>
     </div></div>
   </div>
 
-</div><!-- /timeline day2 -->
+</div><!-- /timeline day3-A -->
 
-<!-- DAY 3 (shared) -->
+
 <div class="day-header d3">
-  <div class="day-num">第三天</div>
+  <div class="day-num">第四天</div>
   <div class="day-info">
     <div class="day-date">7/14（週二）</div>
     <div class="day-desc">返台日 · 25分鐘直達浦東機場</div>
@@ -506,51 +576,46 @@
 
   <div class="tl-item">
     <div class="tl-time"><span class="tb">08:00</span></div>
-    <div class="tl-body"><div class="ec">
-      <div class="ec-title">🍳 酒店早餐 ＋ 退房</div>
-      <p class="ec-body">悠閒用完早餐，整理行李辦理退房。</p>
+    <div class="tl-body"><div class="ec compact" onclick="">
+      <div class="ec-title-row">
+        <div class="ec-title">🍳 酒店早餐 ＋ 退房</div>
+        
+      </div>
+      <p class="ec-summary">悠閒用完早餐，整理行李辦理退房。</p>
     </div></div>
   </div>
 
   <div class="tl-item d3c">
     <div class="tl-time"><span class="tb">08:45</span></div>
-    <div class="tl-body"><div class="ec navy">
-      <div class="ec-title">🚗 第三趟滴滴商務車</div>
-      <p class="ec-body">走申嘉湖高速，里程約 22 公里，車程 <strong>僅 25 分鐘</strong>，車資約 <strong>¥60</strong>。</p>
+    <div class="tl-body"><div class="ec navy compact" onclick="">
+      <div class="ec-title-row">
+        <div class="ec-title">🚗 滴滴商務車衝機場（6人·7座）</div>
+        
+      </div>
+      <p class="ec-summary">走申嘉湖高速，約 22 公里，車程 25 分鐘，車資約 ¥80。</p>
     </div></div>
   </div>
 
   <div class="tl-item d3c">
     <div class="tl-time"><span class="tb">09:10</span></div>
-    <div class="tl-body"><div class="ec gold">
-      <div class="ec-title">✈️ 抵達浦東機場 T1</div>
-      <p class="ec-body"><strong>華航 CI 502（12:05 起飛）</strong>的 3 小時前黃金報到。<span class="grn">輕鬆過安檢、逛免稅店，平靜返台。</span></p>
-      <div class="badge">✓ 動線已核實</div>
+    <div class="tl-body"><div class="ec gold compact" onclick="openModal('modal32')">
+      <div class="ec-title-row">
+        <div class="ec-title">✈️ 抵達浦東機場 T1</div>
+        <button class="detail-btn" onclick="openModal('modal32')">詳情 ›</button>
+      </div>
+      <p class="ec-summary">華航 CI 502（12:05 起飛）的 3 小時前黃金報到</p>
     </div></div>
   </div>
 
-</div><!-- /timeline day3 -->
+</div><!-- /timeline day4-A -->
 
-<!-- PREP & BUDGET Plan A -->
+
 <div class="section-label"><div class="ll"></div><span>出發前備物清單</span><div class="ll"></div></div>
 <div class="prep-grid">
-  <div class="prep-card">
-    <span class="icon">📱</span><h3>官方 App</h3>
-    <p>下載「上海迪士尼度假區」App，綁定台胞證。尊享卡購買全靠它。</p>
-  </div>
-  <div class="prep-card">
-    <span class="icon">🌞</span><h3>抗暑四件套</h3>
-    <ul><li>機能排汗衫＋遮陽帽</li><li>抗UV外套＋防曬乳</li><li>保溫瓶裝冰水</li><li>涼感濕紙巾×2包</li></ul>
-  </div>
-  <div class="prep-card">
-    <span class="icon">💨</span><h3>避暑絕招</h3>
-    <p>淘寶預購「掛脖手持雙頭風扇」×2台，人手一台，7月高溫救命神器。</p>
-  </div>
-  <div class="prep-card" style="background:#FFF5E6;border-color:var(--gold)">
-    <span class="icon">🌧️</span><h3>雨衣先備好</h3>
-    <p style="color:#7A4F1A;font-size:13px">漂流全濕，園外賣 <strong style="color:var(--red)">60元</strong>。便利商店先買好帶進去。</p>
-    <div class="badge">✓ 已核實</div>
-  </div>
+  <div class="prep-card"><span class="icon">📱</span><h3>官方 App</h3><p>下載「上海迪士尼度假區」App，綁定台胞證。尊享卡購買全靠它。</p></div>
+  <div class="prep-card"><span class="icon">🌞</span><h3>抗暑四件套</h3><ul><li>機能排汗衫＋遮陽帽</li><li>抗UV外套＋防曬乳</li><li>保溫瓶裝冰水</li><li>涼感濕紙巾×2包</li></ul></div>
+  <div class="prep-card"><span class="icon">💨</span><h3>避暑絕招</h3><p>淘寶預購「掛脖手持雙頭風扇」×2台，人手一台，7月高溫救命神器。</p></div>
+  <div class="prep-card" style="background:#FFF5E6;border-color:var(--gold)"><span class="icon">🌧️</span><h3>雨衣先備好</h3><p style="color:#7A4F1A;font-size:13px">漂流全濕，園外賣 <strong style="color:var(--red)">60元</strong>。便利商店先買好帶進去。</p><div class="badge">✓ 已核實</div></div>
 </div>
 
 <div class="section-label"><div class="ll"></div><span>Plan A 現場費用精算</span><div class="ll"></div></div>
@@ -558,329 +623,381 @@
   <p style="font-size:12px;color:var(--warm-gray);padding:0 2px 8px;letter-spacing:1px;">🏠 Rian 家（4人）</p>
   <table class="budget-table">
     <tr><th>項目</th><th style="text-align:right">人民幣</th></tr>
-    <tr><td>7/12 海鹽→天文館 滴滴（5人均攤4/5）</td><td>¥324</td></tr>
+    <tr><td>7/11 海鹽→萬怡酒店 滴滴（5人均攤4/5）</td><td>¥308</td></tr>
+    <tr><td>7/11 外灘晚餐（4人）</td><td>¥400</td></tr>
+    <tr><td>7/12 萬怡→天文館 滴滴（6人均攤4/6）</td><td>¥186</td></tr>
     <tr><td>7/12 天文館午餐（4人）</td><td>¥240</td></tr>
-    <tr><td>7/12 天文館→酒店 7座滴滴（4/6均攤）</td><td>¥133</td></tr>
-    <tr><td>7/12 酒店⇄外灘 來回7座滴滴（4/6均攤）</td><td>¥173</td></tr>
-    <tr><td>7/12 外灘晚餐（4人）</td><td>¥400</td></tr>
+    <tr><td>7/12 天文館→酒店 7座（4/6均攤）</td><td>¥133</td></tr>
+    <tr><td>7/12 酒店或小鎮晚餐（4人）</td><td>¥400</td></tr>
     <tr><td>7/13 飛越地平線尊享卡（¥180×4）</td><td>¥720</td></tr>
     <tr><td>7/13 園內午餐・雨衣・棒冰・飲料（4人）</td><td>¥800</td></tr>
     <tr><td>7/14 酒店→浦東機場 7座（4/6均攤）</td><td>¥53</td></tr>
   </table>
-  <div class="budget-total"><span>Rian家 小計</span><span>¥2,843 ≈ NT$12,795</span></div>
+  <div class="budget-total"><span>Rian家 小計</span><span>¥3,240 ≈ NT$14,580</span></div>
 
   <p style="font-size:12px;color:var(--warm-gray);padding:16px 2px 8px;letter-spacing:1px;">👩‍👦 忻禹＋李子（2人）</p>
   <table class="budget-table">
     <tr><th>項目</th><th style="text-align:right">人民幣</th></tr>
-    <tr><td>7/12 海鹽→天文館 滴滴（5人均攤2/5）</td><td>¥162</td></tr>
+    <tr><td>7/11 海鹽→萬怡酒店 滴滴（5人均攤1/5）</td><td>¥77</td></tr>
+    <tr><td>7/11 外灘晚餐（2人）</td><td>¥200</td></tr>
+    <tr><td>7/12 萬怡→天文館 滴滴（6人均攤2/6）</td><td>¥93</td></tr>
     <tr><td>7/12 天文館午餐（2人）</td><td>¥120</td></tr>
-    <tr><td>7/12 天文館→酒店 7座滴滴（2/6均攤）</td><td>¥67</td></tr>
-    <tr><td>7/12 酒店⇄外灘 來回7座滴滴（2/6均攤）</td><td>¥87</td></tr>
-    <tr><td>7/12 外灘晚餐（2人）</td><td>¥200</td></tr>
+    <tr><td>7/12 天文館→酒店 7座（2/6均攤）</td><td>¥67</td></tr>
+    <tr><td>7/12 酒店或小鎮晚餐（2人）</td><td>¥200</td></tr>
     <tr><td>7/13 飛越地平線尊享卡（¥180×2）</td><td>¥360</td></tr>
     <tr><td>7/13 園內午餐・雨衣・棒冰・飲料（2人）</td><td>¥400</td></tr>
     <tr><td>7/14 酒店→浦東機場 7座（2/6均攤）</td><td>¥27</td></tr>
   </table>
-  <div class="budget-total" style="background:#5A2D7A"><span>忻禹李子 小計</span><span>¥1,423 ≈ NT$6,404</span></div>
-  <p class="budget-note">※ Jack 個人費用自理。不含機票、酒店房費、迪士尼門票。車資為估算，依百度地圖實際報價更新；外灘來回車資未經百度地圖核實，僅供參考。</p>
+  <div class="budget-total" style="background:#5A2D7A"><span>忻禹李子 小計</span><span>¥1,544 ≈ NT$6,948</span></div>
+  <p class="budget-note">※ Jack 個人費用自理（7/11晚餐除外，已併入6人均攤）。不含機票、酒店房費、迪士尼門票。車資依百度地圖實際報價更新；7/11晚餐、7/12晚餐車資為估算，僅供參考。</p>
 </div>
 
 </div><!-- /plan-a -->
 
 
-<!-- ══════════════════════════════
-     PLAN B
-══════════════════════════════ -->
+<!-- ══════════════ PLAN B ══════════════ -->
 <div id="plan-b" class="tab-panel">
 
 <div style="padding:14px 14px 0">
   <div class="alt-note">
-    🎯 <strong>啟動條件：</strong>搶票嘗試多日皆失敗、確定無法取得 7/12 天文館門票，立刻切換此方案。<br><br>
-    戰場移至上海市中心：城隍廟、豫園、南京路、外灘。17:00 準時切回迪士尼酒店，<strong>完全不影響 7/13 優先入園特權。</strong>
+    🎯 <strong>啟動條件：</strong>7/12 搶天文館票多日嘗試皆失敗，立刻切換此方案。<br><br>
+    考量 Jelian（高一）與 Redd（國二）這個年紀，方案聚焦「兼具質感與拍照、符合青少年胃口、避開酷暑」。提供 <strong>A：科技潮流線</strong> 與 <strong>B：知性文青線</strong> 兩個方向，現場依當天大家興致決定。
   </div>
 </div>
 
-<div class="day-header dalt" style="margin-top:14px">
-  <div class="day-num">第一天</div>
+<div class="subgroup-tabs" style="margin-top:14px">
+  <button class="subgroup-tab-btn active subA" onclick="switchSubgroup('subA')">方案 A・科技潮流線</button>
+  <button class="subgroup-tab-btn subB" onclick="switchSubgroup('subB')">方案 B・知性文青線</button>
+</div>
+
+<!-- SUBPLAN A -->
+<div id="subA" class="subgroup-panel active">
+
+<div class="day-header dalt">
+  <div class="day-num">方案A</div>
   <div class="day-info">
     <div class="day-date">7/12（週日）</div>
-    <div class="day-desc">海鹽出發 → 豫園・南京路・外灘 → 入住迪士尼酒店</div>
+    <div class="day-desc">靜安大悅城 → 徐匯西岸 → 入住迪士尼酒店</div>
   </div>
 </div>
 <div class="timeline">
 
   <div class="tl-item">
     <div class="tl-time"><span class="tb">08:00</span></div>
-    <div class="tl-body"><div class="ec">
-      <div class="ec-title">🧳 海鹽賓館退房</div>
-      <p class="ec-body">辦理退房，悠閒吃完早餐再出發，行李推至大廳準備上車。<br><span class="grn">住宿軌跡：7/7-7/11 海鹽開源森泊酒店 → 7/11-7/12 海鹽賓館</span></p>
-      <div class="subs">
-        <div class="si pb">📍 浙江省嘉興市海鹽縣海濱東路35號（郵編 314300）</div>
+    <div class="tl-body"><div class="ec compact" onclick="">
+      <div class="ec-title-row">
+        <div class="ec-title">🧳 萬怡酒店退房</div>
+        
       </div>
+      <p class="ec-summary">悠閒用完早餐再出發，帶上全部行李，行李推至大廳準備上車。</p>
     </div></div>
   </div>
 
   <div class="tl-item altc">
-    <div class="tl-time"><span class="tb">08:30</span></div>
-    <div class="tl-body"><div class="ec purple">
-      <div class="ec-title">🚗 第一趟滴滴商務車 · 市區直達（5人）</div>
-      <p class="ec-body">走沈海高速 + 滬金高速切進黃浦區。Jack 直接前往迪士尼酒店辦理入住等候。</p>
-      <div class="subs">
-        <div class="si purple-bar">👥 Rian・Jelian・Redd・忻禹・李子</div>
-        <div class="si purple-bar">📍 約 105 公里，車程 <strong>2小時整</strong>，車資約 <strong>¥420</strong></div>
-        <div class="si purple-bar">目的地：「豫園商城」附近</div>
+    <div class="tl-time"><span class="tb">09:00</span></div>
+    <div class="tl-body"><div class="ec purple compact" onclick="openModal('modal34')">
+      <div class="ec-title-row">
+        <div class="ec-title">🎪 靜安大悅城・二次元與潮流文創天堂</div>
+        <button class="detail-btn" onclick="openModal('modal34')">詳情 ›</button>
       </div>
+      <p class="ec-summary">頂樓巨大摩天輪</p>
     </div></div>
   </div>
 
   <div class="tl-item">
-    <div class="tl-time"><span class="tb">10:30</span></div>
-    <div class="tl-body"><div class="ec">
-      <div class="ec-title">🧳 寄存大行李</div>
-      <p class="ec-body">抵達後行李寄存於豫園地鐵站周邊（微信搜尋「途簡單」或「小鐵寄存」），或直接送「豫園商城」遊客服務中心。6件約 <strong>¥90</strong>。全員空手輕裝出發。</p>
-    </div></div>
-  </div>
-
-  <div class="tl-item altc">
-    <div class="tl-time"><span class="tb">10:30</span></div>
-    <div class="tl-body"><div class="ec purple">
-      <div class="ec-title">🏯 城隍廟 · 豫園：江南古典風華</div>
-      <p class="ec-body">逛城隍廟與豫園商城，欣賞九曲橋與明清建築。<span class="pur">Jelian 可以在這裡拍到有中式古典張力的照片。</span></p>
-      <div class="subs">
-        <div class="si purple-bar">⚠️ 7月戶外 11:00 已高溫，以「散步·拍照·快閃」為主，不在太陽下久曬</div>
-      </div>
-    </div></div>
-  </div>
-
-  <div class="tl-item altc">
     <div class="tl-time"><span class="tb">12:00</span></div>
-    <div class="tl-body"><div class="ec cool">
-      <div class="ec-title">🥟 南翔饅頭店午餐（極致避暑）</div>
-      <p class="ec-body">百年歷史名店，二樓三樓內用 <span class="grn">冷氣極強</span>。</p>
-      <div class="subs">
-        <div class="si purple-bar">點傳統鮮肉小籠 ＋ 蟹黃灌湯包（拿吸管吸湯汁，平仔會覺得很有趣）</div>
-        <div class="si purple-bar">6人吃飽約 <strong>¥530</strong>，吹冷氣休息到 13:30，避開正午大太陽</div>
+    <div class="tl-body"><div class="ec compact" onclick="">
+      <div class="ec-title-row">
+        <div class="ec-title">🍽️ 商場內午餐</div>
+        
       </div>
+      <p class="ec-summary">大悅城內選擇多元，6人午餐約 ¥600。</p>
     </div></div>
   </div>
 
   <div class="tl-item altc">
-    <div class="tl-time"><span class="tb">13:45</span></div>
-    <div class="tl-body"><div class="ec purple">
-      <div class="ec-title">🛍 南京路步行街 · 海派風情</div>
-      <p class="ec-body">短途滴滴約 <strong>¥30</strong>，10分鐘抵達南京東路步行街。</p>
-      <div class="subs">
-        <div class="si purple-bar">全球最大「<strong>樂高品牌旗艦店</strong>」— 內有東方明珠樂高模型，平仔必逛</div>
-        <div class="si purple-bar"><strong>M&M's 巧克力世界</strong> — Jelian 拍照天堂</div>
-        <div class="si purple-bar">全程在各大商場冷氣房「點對點切換」，既逛到街又吹到冷氣。南京路冰飲點心約 <strong>¥220</strong></div>
+    <div class="tl-time"><span class="tb">13:30</span></div>
+    <div class="tl-body"><div class="ec purple compact" onclick="openModal('modal36')">
+      <div class="ec-title-row">
+        <div class="ec-title">🏛️ 西岸穹頂藝術中心 / AI 廣場（徐匯西岸）</div>
+        <button class="detail-btn" onclick="openModal('modal36')">詳情 ›</button>
       </div>
-    </div></div>
-  </div>
-
-  <div class="tl-item altc">
-    <div class="tl-time"><span class="tb">15:30</span></div>
-    <div class="tl-body"><div class="ec purple">
-      <div class="ec-title">🌆 外灘：萬國建築博覽群</div>
-      <p class="ec-body">從南京路步行街直走即抵外灘。黃浦江畔，一側是百年和平飯店等萬國建築，對岸是東方明珠與陸家嘴摩天樓。<span class="pur">下午四點江風吹過，是拍全家福合照的最美背景。</span></p>
+      <p class="ec-summary">高科技與當代藝術結合的新地標</p>
     </div></div>
   </div>
 
   <div class="tl-item">
-    <div class="tl-time"><span class="tb">16:45</span></div>
-    <div class="tl-body"><div class="ec">
-      <div class="ec-title">🧳 返回豫園提領大行李</div>
-      <p class="ec-body">取回所有行李，走到路邊等車。</p>
+    <div class="tl-time"><span class="tb">16:00</span></div>
+    <div class="tl-body"><div class="ec compact" onclick="">
+      <div class="ec-title-row">
+        <div class="ec-title">🧳 提領行李，準備出發</div>
+        
+      </div>
+      <p class="ec-summary">取回行李，準備搭車前往迪士尼酒店。</p>
     </div></div>
   </div>
 
   <div class="tl-item altc">
+    <div class="tl-time"><span class="tb">16:15</span></div>
+    <div class="tl-body"><div class="ec purple compact" onclick="openModal('modal38')">
+      <div class="ec-title-row">
+        <div class="ec-title">🚗 滴滴商務車 · 直奔迪士尼</div>
+        <button class="detail-btn" onclick="openModal('modal38')">詳情 ›</button>
+      </div>
+      <p class="ec-summary">徐匯西岸 → 玩具總動員酒店</p>
+    </div></div>
+  </div>
+
+  <div class="tl-item">
     <div class="tl-time"><span class="tb">17:00</span></div>
-    <div class="tl-body"><div class="ec purple">
-      <div class="ec-title">🚗 第二趟滴滴商務車 · 奔向迪士尼（5人）</div>
-      <p class="ec-body">走滬南公路高架直奔浦東。Jack 已在酒店辦好入住等候。<br>約 <strong>28 公里，40~45 分鐘</strong>，車資約 <strong>¥160</strong>。</p>
+    <div class="tl-body"><div class="ec compact" onclick="openModal('modal39')">
+      <div class="ec-title-row">
+        <div class="ec-title">🏨 入住玩具總動員酒店</div>
+        <button class="detail-btn" onclick="openModal('modal39')">詳情 ›</button>
+      </div>
+      <p class="ec-summary">放行李、換裝</p>
     </div></div>
   </div>
 
-  <div class="tl-item">
-    <div class="tl-time"><span class="tb">17:45</span></div>
-    <div class="tl-body"><div class="ec">
-      <div class="ec-title">🏨 玩具總動員酒店 Check-in</div>
-      <p class="ec-body">與 Jack 會合，全員6人集合。放行李、換衣服。<span class="grn">今天下午已經去過外灘，晚餐改在酒店或迪士尼小鎮</span>（約 <strong>¥600</strong>，Rian家 ¥400 / 忻禹李子 ¥200）。今晚早點休息，完美銜接明天 07:15 的迪士尼黃金大作戰。</p>
-    </div></div>
-  </div>
+</div><!-- /timeline subA -->
+</div><!-- /subA -->
 
-</div><!-- /timeline day1b -->
 
-<!-- DAY 2 Plan B (same content) -->
-<div class="day-header d2">
-  <div class="day-num">第二天</div>
+<!-- SUBPLAN B -->
+<div id="subB" class="subgroup-panel">
+
+<div class="day-header dalt2">
+  <div class="day-num">方案B</div>
   <div class="day-info">
-    <div class="day-date">7/13（週一）</div>
-    <div class="day-desc">迪士尼全日不換房決戰・週一人潮黃金期</div>
+    <div class="day-date">7/12（週日）</div>
+    <div class="day-desc">前法租界梧桐區 → 上海博物館 → 入住迪士尼酒店</div>
   </div>
 </div>
 <div class="timeline">
+
+  <div class="tl-item">
+    <div class="tl-time"><span class="tb">08:00</span></div>
+    <div class="tl-body"><div class="ec compact" onclick="">
+      <div class="ec-title-row">
+        <div class="ec-title">🧳 萬怡酒店退房</div>
+        
+      </div>
+      <p class="ec-summary">悠閒用完早餐再出發，帶上全部行李，行李推至大廳準備上車。</p>
+    </div></div>
+  </div>
+
+  <div class="tl-item alt2c">
+    <div class="tl-time"><span class="tb">09:00</span></div>
+    <div class="tl-body"><div class="ec blue compact" onclick="openModal('modal41')">
+      <div class="ec-title-row">
+        <div class="ec-title">🌳 前法租界梧桐區（武康路・安福路・思南公館）</div>
+        <button class="detail-btn" onclick="openModal('modal41')">詳情 ›</button>
+      </div>
+      <p class="ec-summary">保留大量1920年代歐式洋房與老別墅</p>
+    </div></div>
+  </div>
+
+  <div class="tl-item">
+    <div class="tl-time"><span class="tb">12:00</span></div>
+    <div class="tl-body"><div class="ec compact" onclick="">
+      <div class="ec-title-row">
+        <div class="ec-title">🍽️ 梧桐區午餐</div>
+        
+      </div>
+      <p class="ec-summary">武康路、安福路周邊咖啡館或小餐館，6人午餐約 ¥600。</p>
+    </div></div>
+  </div>
+
+  <div class="tl-item alt2c">
+    <div class="tl-time"><span class="tb">13:30</span></div>
+    <div class="tl-body"><div class="ec blue compact" onclick="openModal('modal43')">
+      <div class="ec-title-row">
+        <div class="ec-title">🏛️ 上海博物館（人民廣場本館 或 東館）</div>
+        <button class="detail-btn" onclick="openModal('modal43')">詳情 ›</button>
+      </div>
+      <p class="ec-summary">中國內地頂級博物館之一</p>
+    </div></div>
+  </div>
+
+  <div class="tl-item">
+    <div class="tl-time"><span class="tb">16:00</span></div>
+    <div class="tl-body"><div class="ec compact" onclick="">
+      <div class="ec-title-row">
+        <div class="ec-title">🧳 提領行李，準備出發</div>
+        
+      </div>
+      <p class="ec-summary">取回行李，準備搭車前往迪士尼酒店。</p>
+    </div></div>
+  </div>
+
+  <div class="tl-item alt2c">
+    <div class="tl-time"><span class="tb">16:15</span></div>
+    <div class="tl-body"><div class="ec blue compact" onclick="openModal('modal45')">
+      <div class="ec-title-row">
+        <div class="ec-title">🚗 滴滴商務車 · 直奔迪士尼</div>
+        <button class="detail-btn" onclick="openModal('modal45')">詳情 ›</button>
+      </div>
+      <p class="ec-summary">人民廣場 → 玩具總動員酒店</p>
+    </div></div>
+  </div>
+
+  <div class="tl-item">
+    <div class="tl-time"><span class="tb">17:00</span></div>
+    <div class="tl-body"><div class="ec compact" onclick="openModal('modal46')">
+      <div class="ec-title-row">
+        <div class="ec-title">🏨 入住玩具總動員酒店</div>
+        <button class="detail-btn" onclick="openModal('modal46')">詳情 ›</button>
+      </div>
+      <p class="ec-summary">放行李、換裝</p>
+    </div></div>
+  </div>
+
+</div><!-- /timeline subB -->
+</div><!-- /subB -->
+
+
+<div class="day-header d2"><div class="day-num">第三天</div><div class="day-info"><div class="day-date">7/13（週一）</div><div class="day-desc">迪士尼全日不換房決戰・週一人潮黃金期</div></div></div>
+<div class="timeline">
   <div class="tl-item">
     <div class="tl-time"><span class="tb">06:30</span></div>
-    <div class="tl-body"><div class="ec">
-      <div class="ec-title">🍳 起床用早點（不退房）</div>
-      <p class="ec-body">行李原封不動留在房間。帶上 <span class="red">台胞證正本</span>，準備出發。</p>
+    <div class="tl-body"><div class="ec compact" onclick="">
+      <div class="ec-title-row">
+        <div class="ec-title">🍳 起床用早點（不退房）</div>
+        
+      </div>
+      <p class="ec-summary">行李原封不動留在房間。帶上 台胞證正本，準備出發。</p>
     </div></div>
   </div>
   <div class="tl-item d2c">
     <div class="tl-time"><span class="tb">07:15</span></div>
-    <div class="tl-body"><div class="ec gold">
-      <div class="ec-title">🚌 搭酒店第一班專屬接駁車</div>
-      <p class="ec-body">從迪士尼小鎮通道提前入園。<span class="grn">你們已在刷台胞證進園，一般遊客還在門外排 2 小時安檢。</span></p>
-      <div class="badge">✓ 住客提前1小時入園已核實</div>
+    <div class="tl-body"><div class="ec gold compact" onclick="openModal('modal48')">
+      <div class="ec-title-row">
+        <div class="ec-title">🚌 搭酒店第一班專屬接駁車</div>
+        <button class="detail-btn" onclick="openModal('modal48')">詳情 ›</button>
+      </div>
+      <p class="ec-summary">從迪士尼小鎮通道提前入園</p>
     </div></div>
-  </div>
+  </div></div>
   <div class="tl-item d2c">
     <div class="tl-time"><span class="tb">07:30</span></div>
-    <div class="tl-body"><div class="ec gold">
-      <div class="ec-title">⚡ 黃金一小時 · 狂刷大魔王</div>
-      <p class="ec-body"><span class="red">不要在門口拍照</span>，快步直奔明日世界。創極速光輪 + 噴氣背包，10分鐘內刷完兩大魔王。</p>
+    <div class="tl-body"><div class="ec gold compact" onclick="openModal('modal49')">
+      <div class="ec-title-row">
+        <div class="ec-title">⚡ 黃金一小時・狂刷大魔王</div>
+        <button class="detail-btn" onclick="openModal('modal49')">詳情 ›</button>
+      </div>
+      <p class="ec-summary">不要在門口拍照</p>
     </div></div>
   </div>
   <div class="tl-item">
     <div class="tl-time"><span class="tb">08:30</span></div>
-    <div class="tl-body"><div class="ec hot">
-      <div class="ec-title">📲 加購尊享卡 ＋ 瘋狂動物城</div>
-      <p class="ec-body">App 加購飛越地平線尊享卡 ¥180×4 = <strong>¥720</strong>。刷完後前往 Zootopia 玩「熱力追蹤」，買爪爪棒冰拍照降溫。</p>
+    <div class="tl-body"><div class="ec hot compact" onclick="openModal('modal50')">
+      <div class="ec-title-row">
+        <div class="ec-title">📲 加購尊享卡＋瘋狂動物城</div>
+        <button class="detail-btn" onclick="openModal('modal50')">詳情 ›</button>
+      </div>
+      <p class="ec-summary">App 加購飛越地平線尊享卡 ¥180×6 = ¥1,080</p>
     </div></div>
   </div>
   <div class="tl-item d2c">
     <div class="tl-time"><span class="tb">12:00</span></div>
-    <div class="tl-body"><div class="ec cool">
-      <div class="ec-title">❄️ 室內冷氣三部曲</div>
-      <p class="ec-body">巴波薩燒烤午餐（約 ¥800）→ 加勒比海盜 → 杰克船長特技劇場。讓體力滿血回歸。</p>
+    <div class="tl-body"><div class="ec cool compact" onclick="">
+      <div class="ec-title-row">
+        <div class="ec-title">❄️ 室內冷氣三部曲</div>
+        
+      </div>
+      <p class="ec-summary">巴波薩燒烤午餐→加勒比海盜→杰克船長特技劇場。讓體力滿血回歸。</p>
     </div></div>
   </div>
   <div class="tl-item">
     <div class="tl-time"><span class="tb">15:45</span></div>
-    <div class="tl-body"><div class="ec">
-      <div class="ec-title">🧚 下午溫馨場次 ＋ 夕陽全家福</div>
-      <p class="ec-body">小飛俠 → 愛麗絲迷宮 → 城堡前拍夕陽照。</p>
+    <div class="tl-body"><div class="ec compact" onclick="">
+      <div class="ec-title-row">
+        <div class="ec-title">🧚 下午溫馨場次＋夕陽全家福</div>
+        
+      </div>
+      <p class="ec-summary">小飛俠→愛麗絲迷宮→城堡前拍夕陽照。</p>
     </div></div>
   </div>
   <div class="tl-item d2c">
     <div class="tl-time"><span class="tb">19:30</span></div>
-    <div class="tl-body"><div class="ec gold">
-      <div class="ec-title">✨ 奇幻光影秀</div>
-      <p class="ec-body">城堡正前方觀賞煙火秀。看完搭接駁車回酒店，洗澡躺平。</p>
+    <div class="tl-body"><div class="ec gold compact" onclick="">
+      <div class="ec-title-row">
+        <div class="ec-title">✨ 奇幻光影秀</div>
+        
+      </div>
+      <p class="ec-summary">城堡正前方觀賞煙火秀。看完搭接駁車回酒店，洗澡躺平。</p>
     </div></div>
   </div>
 </div>
 
-<!-- DAY 3 Plan B (same) -->
-<div class="day-header d3">
-  <div class="day-num">第三天</div>
-  <div class="day-info">
-    <div class="day-date">7/14（週二）</div>
-    <div class="day-desc">返台日 · 25分鐘直達浦東機場</div>
-  </div>
-</div>
+<div class="day-header d3"><div class="day-num">第四天</div><div class="day-info"><div class="day-date">7/14（週二）</div><div class="day-desc">返台日 · 25分鐘直達浦東機場</div></div></div>
 <div class="timeline">
   <div class="tl-item">
     <div class="tl-time"><span class="tb">08:00</span></div>
-    <div class="tl-body"><div class="ec">
-      <div class="ec-title">🍳 酒店早餐 ＋ 退房</div>
-      <p class="ec-body">悠閒用完早餐，整理行李辦理退房。</p>
+    <div class="tl-body"><div class="ec compact" onclick="">
+      <div class="ec-title-row">
+        <div class="ec-title">🍳 酒店早餐＋退房</div>
+        
+      </div>
+      <p class="ec-summary">悠閒用完早餐，整理行李辦理退房。</p>
     </div></div>
   </div>
   <div class="tl-item d3c">
     <div class="tl-time"><span class="tb">08:45</span></div>
-    <div class="tl-body"><div class="ec navy">
-      <div class="ec-title">🚗 滴滴商務車衝機場（6人·7座）</div>
-      <p class="ec-body">走申嘉湖高速，約 22 公里，車程 <strong>25 分鐘</strong>，車資約 <strong>¥80</strong>。</p>
+    <div class="tl-body"><div class="ec navy compact" onclick="">
+      <div class="ec-title-row">
+        <div class="ec-title">🚗 滴滴商務車衝機場（6人·7座）</div>
+        
+      </div>
+      <p class="ec-summary">走申嘉湖高速，約 22 公里，車程 25 分鐘，車資約 ¥80。</p>
     </div></div>
   </div>
   <div class="tl-item d3c">
     <div class="tl-time"><span class="tb">09:10</span></div>
-    <div class="tl-body"><div class="ec gold">
-      <div class="ec-title">✈️ 浦東機場 T1 · 完美收尾</div>
-      <p class="ec-body"><strong>華航 CI 502（12:05）</strong>的 3 小時前報到，輕鬆過安檢返台。</p>
-      <div class="badge">✓ 動線已核實</div>
+    <div class="tl-body"><div class="ec gold compact" onclick="openModal('modal56')">
+      <div class="ec-title-row">
+        <div class="ec-title">✈️ 浦東機場 T1・完美收尾</div>
+        <button class="detail-btn" onclick="openModal('modal56')">詳情 ›</button>
+      </div>
+      <p class="ec-summary">華航 CI 502（12:05）的 3 小時前報到，輕鬆過安檢返台。</p>
     </div></div>
-  </div>
-</div>
-
-<!-- Budget Plan B -->
-<div class="section-label"><div class="ll"></div><span>Plan B 7/12 單日費用精算</span><div class="ll"></div></div>
-<div class="budget-wrap">
-  <p style="font-size:12px;color:var(--warm-gray);padding:0 2px 8px;letter-spacing:1px;">🏠 Rian 家（4人）</p>
-  <table class="budget-table">
-    <tr><th>項目</th><th style="text-align:right">人民幣</th></tr>
-    <tr><td>海鹽→豫園 滴滴（5人均攤4/5）</td><td>¥336</td></tr>
-    <tr><td>行李寄存（4件）</td><td>¥60</td></tr>
-    <tr><td>南翔饅頭店午餐（4人）</td><td>¥350</td></tr>
-    <tr><td>豫園→南京路 短途滴滴（4/5均攤）</td><td>¥24</td></tr>
-    <tr><td>南京路冰飲點心（4人）</td><td>¥147</td></tr>
-    <tr><td>外灘→酒店 滴滴（4/5均攤）</td><td>¥128</td></tr>
-    <tr><td>迪士尼小鎮晚餐（4人）</td><td>¥400</td></tr>
-  </table>
-  <div class="budget-total alt-total"><span>Rian家 7/12 小計</span><span>¥1,445 ≈ NT$6,500</span></div>
-
-  <p style="font-size:12px;color:var(--warm-gray);padding:16px 2px 8px;letter-spacing:1px;">👩‍👦 忻禹＋李子（2人）</p>
-  <table class="budget-table">
-    <tr><th>項目</th><th style="text-align:right">人民幣</th></tr>
-    <tr><td>海鹽→豫園 滴滴（5人均攤2/5）</td><td>¥168</td></tr>
-    <tr><td>行李寄存（2件）</td><td>¥30</td></tr>
-    <tr><td>南翔饅頭店午餐（2人）</td><td>¥180</td></tr>
-    <tr><td>豫園→南京路 短途滴滴（2/5均攤）</td><td>¥12</td></tr>
-    <tr><td>南京路冰飲點心（2人）</td><td>¥73</td></tr>
-    <tr><td>外灘→酒店 滴滴（2/5均攤）</td><td>¥64</td></tr>
-    <tr><td>迪士尼小鎮晚餐（2人）</td><td>¥200</td></tr>
-  </table>
-  <div class="budget-total" style="background:#5A2D7A"><span>忻禹李子 7/12 小計</span><span>¥727 ≈ NT$3,270</span></div>
-  <p class="budget-note">※ Jack 個人費用自理。7/13、7/14 分攤方式同 Plan A。</p>
+  </div></div>
 </div>
 
 </div><!-- /plan-b -->
 
-<!-- TICKET GUIDE (shared) -->
+
+<!-- TICKET GUIDE -->
 <div class="section-label"><div class="ll"></div><span>門票購買指南</span><div class="ll"></div></div>
-<div class="rules-wrap">
+<div style="padding:0 14px;">
+  <button class="ticket-guide-btn" onclick="openModal('ticketModal')">
+    🎫 查看完整購票說明（迪士尼門票・尊享卡・天文館搶票）
+  </button>
+</div>
+
+<div id="ticketModal" class="modal-overlay" onclick="if(event.target===this)closeModal('ticketModal')">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal('ticketModal')">✕</button>
+    <div class="modal-title" style="font-family:'Noto Serif TC',serif;font-weight:700;font-size:18px;margin-bottom:14px;">🎫 門票購買指南</div>
+  <div class="rules-wrap" style="padding:0;">
   <div style="background:var(--card-bg);border:1px solid var(--border);border-radius:10px;padding:15px 16px;margin-bottom:10px;">
     <div style="font-family:'Noto Serif TC',serif;font-weight:700;font-size:15px;margin-bottom:10px;">🎫 迪士尼門票（6人，最優先）</div>
-
-    <div style="font-size:13px;color:var(--text-body);line-height:1.9;">
-      <strong style="color:var(--ink)">門票是實名制</strong>，每張票綁定一人台胞證，入園需同時出示台胞證＋護照。<br><br>
-
-      <strong style="color:var(--ink)">購票管道（擇一）：</strong>
-    </div>
-
+    <div style="font-size:13px;color:var(--text-body);line-height:1.9;"><strong style="color:var(--ink)">門票是實名制</strong>，每張票綁定一人台胞證，入園需同時出示台胞證＋護照。<br><br><strong style="color:var(--ink)">購票管道（擇一）：</strong></div>
     <div class="subs" style="margin-top:8px;">
-      <div class="si">
-        <strong>① 上海迪士尼官方 App</strong>（最推薦）<br>
-        直接用台胞證號登記購票，同一帳號可購買多張。7月屬旺季高峰日，票價約 <strong>¥719/人</strong>，6人共約 ¥4,314（Rian家4人 ≈¥2,876 / 忻禹李子2人 ≈¥1,438）。購票後在 App 內將票綁成同一群組，方便當天使用尊享卡。
-      </div>
-      <div class="si">
-        <strong>② KKday / Klook</strong>（台灣慣用平台）<br>
-        用台幣刷卡，較方便。價格與官方 App 相近，偶有促銷折扣，可比價後購買。
-      </div>
+      <div class="si"><strong>① 上海迪士尼官方 App</strong>（最推薦）<br>直接用台胞證號登記。7月旺季票價約 <strong>¥719/人</strong>，6人約 ¥4,314（Rian家4人 ≈¥2,876 / 忻禹李子2人 ≈¥1,438）。建議分開購買方便各自結算，Jack 自行購買。</div>
+      <div class="si"><strong>② KKday / Klook</strong>（台灣慣用平台）<br>用台幣刷卡，偶有促銷折扣，可比價後購買。</div>
     </div>
-
-    <div style="background:#FFF5E6;border:1px solid var(--gold);border-radius:8px;padding:11px 13px;margin-top:10px;font-size:13px;color:#7A4F1A;line-height:1.8;">
-      ⚠️ <strong style="color:var(--red)">7月旺季高峰日票價最高</strong>，建議盡早購買鎖定日期（票買好後可更改入園日，但不可退票）。<br>
-      建議 Rian家4人 + 忻禹李子2人分開購買，方便費用各自結算。Jack 的票自行購買。
-    </div>
+    <div style="background:#FFF5E6;border:1px solid var(--gold);border-radius:8px;padding:11px 13px;margin-top:10px;font-size:13px;color:#7A4F1A;line-height:1.8;">⚠️ <strong style="color:var(--red)">7月旺季高峰日票價最高</strong>，建議盡早購買鎖定日期（可改日期，但不可退票）。</div>
   </div>
-
   <div style="background:var(--card-bg);border:1px solid var(--border);border-radius:10px;padding:15px 16px;margin-bottom:10px;">
     <div style="font-family:'Noto Serif TC',serif;font-weight:700;font-size:15px;margin-bottom:10px;">⚡ 尊享卡（快速通關，當天園內購買）</div>
-    <div style="font-size:13px;color:var(--text-body);line-height:1.9;">
-      不需要提前買，<strong style="color:var(--ink)">入園當天 08:30 在官方 App 直接購買</strong>。
-    </div>
     <div class="subs" style="margin-top:8px;">
       <div class="si">單項：<strong>翱翔·飛越地平線</strong> ¥180/人 × 6人 = ¥1,080（Rian家 ¥720 / 忻禹李子 ¥360）</div>
-      <div class="si">單項：<strong>創極速光輪</strong>（黃金時段衝完不需要買）</div>
-      <div class="si">若預算充裕：3項尊享卡套組，可涵蓋飛越地平線＋加勒比海盜＋熱力追蹤</div>
+      <div class="si">入園當天 08:30 在官方 App 直接購買，不需提前</div>
     </div>
   </div>
-
-  <div style="background:var(--card-bg);border:1px solid var(--border);border-radius:10px;padding:15px 16px;margin-bottom:10px;">
-    <div style="font-family:'Noto Serif TC',serif;font-weight:700;font-size:15px;margin-bottom:10px;">🔭 天文館票（Plan A · 7/9 早上搶）</div>
+  <div style="background:var(--card-bg);border:1px solid var(--border);border-radius:10px;padding:15px 16px;margin-bottom:0;">
+    <div style="font-family:'Noto Serif TC',serif;font-weight:700;font-size:15px;margin-bottom:10px;">🔭 天文館票（Plan A · 提早搶）</div>
     <div style="font-size:13px;color:var(--text-body);line-height:1.9;">
       <strong style="color:var(--ink)">搶票時間：建議從 7/5（週日）起每天早上 09:30 嘗試搶票</strong>（官方放票規則近期在「提前3天」與「提前7天」間調整過，<span class="red">出發前務必再次確認當下規則</span>）<br>
       管道：微信公眾號/小程序搜尋「上海天文館」→ 選 7/12 場次，一次搶 <strong>6張</strong>。事先錄入所有人台胞證資料，開放秒搶。
@@ -889,54 +1006,544 @@
       <div class="si">票種選擇：成人票（Rian・Jack・忻禹）＋ 學生票（Jelian・Redd・李子）</div>
       <div class="si"><strong style="color:var(--gold)">本次重點：球幕影院</strong>需單獨購票，約¥40/人，10:00 開放預約，5-8排觀感最佳。<span class="red">一個帳號上限5張</span>，6人要拆兩個帳號分開搶</div>
       <div class="si">「飛越銀河系」「航向火星」展項預約意願較低，<span class="grn">不特別搶</span>（若臨時想參加：飛越銀河系每場僅18人，航向火星身高需≥1.5米，需檢票進館後立刻在微信公眾號「參觀」→「展項課程預約」搶名額）</div>
-      <div class="si" style="border-left-color:var(--red);"><strong style="color:var(--red)">搶票失敗 → 直接切換 Plan B</strong>，7/12 改走豫園・南京路・外灘市區線</div>
+      <div class="si" style="border-left-color:var(--red);"><strong style="color:var(--red)">搶票失敗 → 直接切換 Plan B</strong>，7/12 改走方案A（科技潮流）或方案B（知性文青）市區線</div>
     </div>
+  </div>
+  </div>
   </div>
 </div>
 
-<!-- RULES (shared) -->
+<!-- RULES -->
 <div class="section-label"><div class="ll"></div><span>Rian 必讀三條鐵律</span><div class="ll"></div></div>
 <div class="rules-wrap">
   <div class="rules">
-    <div class="rule">
-      <div class="rnum">一</div>
-      <div class="rbody">
-        <h3>不追大滿貫</h3>
-        <p>7月旺季想玩完所有設施只有買VIP導覽一條路。今天真實目標：</p>
-        <div class="goalbox">創極速光輪 ＋ 飛越地平線 ＋ 加勒比海盜<small>→ 這三個刷完，票價就值回來了</small></div>
-      </div>
-    </div>
-    <div class="rule">
-      <div class="rnum">二</div>
-      <div class="rbody">
-        <h3>各自滿足就是成功</h3>
-        <p>熱的玩到（平仔開心）、美的拍到（Jelian 開心）、大家不中暑（你安心）。這就是今天的成功標準。</p>
-      </div>
-    </div>
-    <div class="rule">
-      <div class="rnum">三</div>
-      <div class="rbody">
-        <h3>7/14 動線是最優解</h3>
-        <p>酒店 08:45 出發 → 滴滴 25 分鐘 → 09:10 抵達浦東機場。距起飛剛好 3 小時，不需要前晚轉場機場飯店，睡眠完整，動線乾淨。</p>
-      </div>
-    </div>
+    <div class="rule"><div class="rnum">一</div><div class="rbody"><h3>不追大滿貫</h3><p>7月旺季真實目標只有三個：</p><div class="goalbox">創極速光輪 ＋ 飛越地平線 ＋ 加勒比海盜<small>→ 這三個刷完，票價就值回來了</small></div></div></div>
+    <div class="rule"><div class="rnum">二</div><div class="rbody"><h3>各自滿足就是成功</h3><p>熱的玩到（平仔開心）、美的拍到（Jelian 開心）、大家不中暑（你安心）。這就是今天的成功標準。</p></div></div>
+    <div class="rule"><div class="rnum">三</div><div class="rbody"><h3>7/14 動線是最優解</h3><p>酒店 08:45 出發 → 滴滴 25 分鐘 → 09:10 抵達浦東機場。距起飛剛好 3 小時，睡眠完整，動線乾淨。</p></div></div>
   </div>
 </div>
 
 </main>
-
-<footer>三天兩夜上海行程 · 7/12–7/14 · Rian · Jelian（果兒）· Redd · Jack · 忻禹 · 李子 · 資訊已核實</footer>
-</div><!-- /container -->
-
+<footer>三天兩夜上海行程 · 7/11–7/14 · Rian · Jelian（果兒）· Redd · Jack · 忻禹 · 李子 · 資訊已核實</footer>
+</div>
 <script>
-function switchTab(id) {
-  document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
-  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+function openModal(id){
+  document.getElementById(id).classList.add('show');
+  document.body.style.overflow='hidden';
+}
+function closeModal(id){
+  document.getElementById(id).classList.remove('show');
+  document.body.style.overflow='';
+}
+function switchTab(id){
+  document.querySelectorAll('.tab-panel').forEach(p=>p.classList.remove('active'));
+  document.querySelectorAll('.tab-bar .tab-btn').forEach(b=>b.classList.remove('active'));
   document.getElementById(id).classList.add('active');
-  const idx = id === 'plan-a' ? 0 : 1;
-  document.querySelectorAll('.tab-btn')[idx].classList.add('active');
-  window.scrollTo({top: 0, behavior: 'smooth'});
+  document.querySelectorAll('.tab-bar .tab-btn')[id==='plan-a'?0:1].classList.add('active');
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+function switchSubgroup(id){
+  document.querySelectorAll('.subgroup-panel').forEach(p=>p.classList.remove('active'));
+  document.querySelectorAll('.subgroup-tab-btn').forEach(b=>b.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  document.querySelectorAll('.subgroup-tab-btn').forEach(b=>{
+    if(b.classList.contains(id)) b.classList.add('active');
+  });
 }
 </script>
+<div id="modal1" class="modal-overlay" onclick="if(event.target===this)closeModal('modal1')">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal('modal1')">✕</button>
+    <div class="modal-time">15:00</div>
+    <div class="ec-title modal-title">🌉 海鹽縣博物館行程結束</div>
+    <p class="ec-body">橋牌交流活動全部結束，5人（Rian・Jelian・Redd・忻禹・李子）整裝出發，行李隨車一起走。</p>
+  </div>
+</div>
+<div id="modal2" class="modal-overlay" onclick="if(event.target===this)closeModal('modal2')">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal('modal2')">✕</button>
+    <div class="modal-time">14:30</div>
+    <div class="ec-title modal-title">🚗 滴滴商務車 · 前往上海浦西萬怡酒店</div>
+    <p class="ec-body">5人＋全部行李，叫 <strong>7座商務車</strong>，途經杭州灣環線高速、滬昆高速。</p>
+      <div class="subs">
+        <div class="si bb">📍 117.5 公里 · 約 28 個紅綠燈</div>
+        <div class="si bb">⏱ 車程 <strong>約1小時45分</strong>，打車約 <strong>¥385</strong></div>
+      </div>
+  </div>
+</div>
+<div id="modal3" class="modal-overlay" onclick="if(event.target===this)closeModal('modal3')">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal('modal3')">✕</button>
+    <div class="modal-time">16:15</div>
+    <div class="ec-title modal-title">🏨 上海浦西萬怡酒店 Check-in</div>
+    <p class="ec-body">5人抵達辦理入住、放行李、簡單梳洗。<span class="blu">Jack 已提早換航班，約 15:00 先抵達酒店等候。</span></p>
+  </div>
+</div>
+<div id="modal4" class="modal-overlay" onclick="if(event.target===this)closeModal('modal4')">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal('modal4')">✕</button>
+    <div class="modal-time">18:00</div>
+    <div class="ec-title modal-title">🚗 6人會合，出發外灘晚餐</div>
+    <p class="ec-body">全員6人集合，叫車前往 <strong>人和館・上海菜（靜安寺店）</strong>，距萬怡酒店僅約 <strong>10 分鐘車程</strong>。<span class="blu">米其林一星本幫菜，17:00 訂位。</span></p>
+    <div class="subs"><div class="si bb">📍 靜安區愚園路142號 3樓（面對靜安寺佛塔，近張愛玲故居）</div><div class="si bb">🍜 必試：蟹粉撈飯・金牌紅燒肉・老上海醬爆豬肝・捨得（時令青菜）</div><div class="si bb">⚠️ 訂位需付押金300元，需提前確認訂位</div></div>
+  </div>
+</div>
+<div id="modal5" class="modal-overlay" onclick="if(event.target===this)closeModal('modal5')">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal('modal5')">✕</button>
+    <div class="modal-time">18:30</div>
+    <div class="ec-title modal-title">🌆 外灘晚餐 ＋ 夜景漫步</div>
+    <p class="ec-body">米其林一星本幫菜，人均約 <strong>¥180</strong>，6人約 <strong>¥1,080</strong>（Rian家4人 ¥720 / 忻禹李子 ¥360）。飯後可在靜安寺一帶散步夜遊，氛圍佳。</p>
+  </div>
+</div>
+<div id="modal6" class="modal-overlay" onclick="if(event.target===this)closeModal('modal6')">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal('modal6')">✕</button>
+    <div class="modal-time">21:00</div>
+    <div class="ec-title modal-title">🚗 返回萬怡酒店</div>
+    <p class="ec-body">人和館 → 上海浦西萬怡酒店，約 10 分鐘車程。<span class="red">提醒：明天要帶全部行李出發天文館，今晚先把行李打包好</span>，回房盡快休息。</p>
+  </div>
+</div>
+<div id="modal7" class="modal-overlay" onclick="if(event.target===this)closeModal('modal7')">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal('modal7')">✕</button>
+    <div class="modal-time">06:30</div>
+    <div class="ec-title modal-title">🧳 萬怡酒店退房</div>
+    <p class="ec-body">辦理退房，帶上<strong>全部行李</strong>（今晚直接入住迪士尼酒店，不回市區）。整裝備好冰水出發。</p>
+  </div>
+</div>
+<div id="modal8" class="modal-overlay" onclick="if(event.target===this)closeModal('modal8')">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal('modal8')">✕</button>
+    <div class="modal-time">07:30</div>
+    <div class="ec-title modal-title">🚗 滴滴商務車出發（6人）</div>
+    <p class="ec-body">全員6人＋全部行李，叫 <strong>7座商務車</strong>，途經外環高速、滬蘆高速。</p>
+      <div class="subs">
+        <div class="si">👥 Rian・Jelian・Redd・Jack・忻禹・李子</div>
+        <div class="si">📍 77.0 公里 · 約 15 個紅綠燈</div>
+        <div class="si">⏱ 車程 <strong>約1小時29分</strong>，打車約 <strong>¥279</strong></div>
+      </div>
+  </div>
+</div>
+<div id="modal9" class="modal-overlay" onclick="if(event.target===this)closeModal('modal9')">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal('modal9')">✕</button>
+    <div class="modal-time">08:59</div>
+    <div class="ec-title modal-title">🔭 抵達上海天文館（滴水湖）</div>
+    <p class="ec-body">距 09:30 開館約半小時，把台胞證收好，準備排隊檢票進館。</p>
+  </div>
+</div>
+<div id="modal10" class="modal-overlay" onclick="if(event.target===this)closeModal('modal10')">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal('modal10')">✕</button>
+    <div class="modal-time">09:30</div>
+    <div class="ec-title modal-title">🎟️ 檢票進館，全部行李寄存</div>
+    <p class="ec-body">把<strong>全部行李</strong>推去寄存區鎖好（今天行李會一路跟著到晚上）。<span class="pur">本次重點是 8K 球幕影院，「飛越銀河系」「航向火星」展項預約意願較低，不特別搶。</span></p>
+  </div>
+</div>
+<div id="modal11" class="modal-overlay" onclick="if(event.target===this)closeModal('modal11')">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal('modal11')">✕</button>
+    <div class="modal-time">10:00</div>
+    <div class="ec-title modal-title">🎬 球幕影院開放預約 · 立刻搶票</div>
+    <p class="ec-body">建築外觀那個巨大「懸浮球體」內部，超高解析度8K圓頂天幕，<span class="grn">本次行程的重點項目</span>。一進館先到 10:00 整，立刻打開「上海天文館」微信公眾號搶場次。</p>
+      <div class="subs">
+        <div class="si">票價約 <strong>¥40/人</strong>，需單獨購票</div>
+        <div class="si" style="border-left-color:var(--red)"><strong style="color:var(--red)">⚠️ 一個微信帳號最多買5張</strong>，6人要拆成兩個帳號分別搶（例如 Rian 帳號搶5張，第6張用 Jack 或忻禹的帳號）</div>
+        <div class="si">一個證件只能買一張票，每場約150人，全天共7個場次</div>
+        <div class="si">若 7/9 已提前加購到票，直接依場次時間安插下方行程</div>
+      </div>
+  </div>
+</div>
+<div id="modal12" class="modal-overlay" onclick="if(event.target===this)closeModal('modal12')">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal('modal12')">✕</button>
+    <div class="modal-time">10:15</div>
+    <div class="ec-title modal-title">🌍 第一站【家園】展區（1F）</div>
+    <p class="ec-body">搶完球幕影院票後，<span class="grn">拒絕走馬看花</span>，這層是硬核青少年逛法的起點：</p>
+      <div class="subs">
+        <div class="si"><span class="sno">必看</span><strong>巨大懸浮地球模型</strong>（內為天象廳）— 太陽系八大行星動態重力場，視覺最震撼</div>
+        <div class="si"><span class="sno">高一看點</span>極光、火山、地球磁場成因展示 — <strong>Jelian</strong> 可直接對照高中地科「地球構造」與「光學現象」</div>
+      </div>
+  </div>
+</div>
+<div id="modal13" class="modal-overlay" onclick="if(event.target===this)closeModal('modal13')">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal('modal13')">✕</button>
+    <div class="modal-time">11:00</div>
+    <div class="ec-title modal-title">🌌 第二站【宇宙】展區（2F）· 快速版</div>
+    <p class="ec-body">硬核物理與時空跨界，<span class="red">時間有限只抓最強亮點：</span></p>
+      <div class="subs">
+        <div class="si"><span class="sno">必看</span><strong>時空裂縫 ＋ 黑洞視覺化裝置</strong> — 廣義相對論的時空彎曲互動牆，<strong>Jelian・Redd</strong> 剛好都在接觸基礎物理階段</div>
+      </div>
+  </div>
+</div>
+<div id="modal14" class="modal-overlay" onclick="if(event.target===this)closeModal('modal14')">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal('modal14')">✕</button>
+    <div class="modal-time">12:00</div>
+    <div class="ec-title modal-title">🍽️ 館內午餐充電</div>
+    <p class="ec-body">館內「銀河餐廳」或咖啡廳，<strong>太空人造型冰淇淋</strong>是必吃，6人簡餐約 <strong>¥360</strong>。</p>
+  </div>
+</div>
+<div id="modal15" class="modal-overlay" onclick="if(event.target===this)closeModal('modal15')">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal('modal15')">✕</button>
+    <div class="modal-time">13:00</div>
+    <div class="ec-title modal-title">🚀 第三站【征程】展區（3F）· 快速版</div>
+    <p class="ec-body">國家科技力與歷史模聯感，<span class="red">只衝這一個必看項目：</span></p>
+      <div class="subs">
+        <div class="si"><span class="sno">必看</span><strong>1:1 天和核心艙實景</strong> — 走進去看太空人如何睡覺、上廁所、做實驗。<strong>Jelian 身為模聯社成員</strong>，可在現場簡短聊聊美蘇太空競賽、大國科技博弈背後的國際政治</div>
+      </div>
+  </div>
+</div>
+<div id="modal16" class="modal-overlay" onclick="if(event.target===this)closeModal('modal16')">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal('modal16')">✕</button>
+    <div class="modal-time">14:00</div>
+    <div class="ec-title modal-title">🎬 球幕影院場次（依預約時間入場）</div>
+    <p class="ec-body">依 10:00 搶到的實際場次時間入場觀看，<span class="grn">視覺震撼度最符合青少年胃口</span>，整個人像漂浮在宇宙中。約40分鐘場次。</p>
+  </div>
+</div>
+<div id="modal17" class="modal-overlay" onclick="if(event.target===this)closeModal('modal17')">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal('modal17')">✕</button>
+    <div class="modal-time">14:50</div>
+    <div class="ec-title modal-title">🛍️ 1F 文創商店 · 快閃採購</div>
+    <p class="ec-body"><strong>太空盲盒、隕石碎片標本、星空書籤</strong> — 高中生和國中生都會很有興趣，是這趟的紀念品首選。<span class="red">控制在15分鐘內</span>。</p>
+  </div>
+</div>
+<div id="modal18" class="modal-overlay" onclick="if(event.target===this)closeModal('modal18')">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal('modal18')">✕</button>
+    <div class="modal-time">15:30</div>
+    <div class="ec-title modal-title">🧳 提領全部行李，準時離館</div>
+    <p class="ec-body">從寄存區取回所有行李，<span class="grn">15:30準時走出天文館大門</span>。</p>
+  </div>
+</div>
+<div id="modal19" class="modal-overlay" onclick="if(event.target===this)closeModal('modal19')">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal('modal19')">✕</button>
+    <div class="modal-time">16:00</div>
+    <div class="ec-title modal-title">🚗 滴滴商務車（6人·7座）· 直奔迪士尼</div>
+    <p class="ec-body">全員6人＋全部行李，叫 <strong>7座商務車</strong>，天文館 → 玩具總動員酒店，<span class="grn">今天行程結束不再回市區。</span></p>
+      <div class="subs">
+        <div class="si">📍 47.4 公里 · 約 14 個紅綠燈</div>
+        <div class="si">⏱ 車程 <strong>約53分鐘</strong>，途經申港大道、滬蘆高速</div>
+      </div>
+  </div>
+</div>
+<div id="modal20" class="modal-overlay" onclick="if(event.target===this)closeModal('modal20')">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal('modal20')">✕</button>
+    <div class="modal-time">16:53</div>
+    <div class="ec-title modal-title">🏨 入住玩具總動員酒店</div>
+    <p class="ec-body">放行李、換裝、稍作休息。晚餐<span class="grn">簡化安排</span>，直接在酒店或迪士尼小鎮解決。</p>
+  </div>
+</div>
+<div id="modal21" class="modal-overlay" onclick="if(event.target===this)closeModal('modal21')">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal('modal21')">✕</button>
+    <div class="modal-time">18:30</div>
+    <div class="ec-title modal-title">🍝 酒店或迪士尼小鎮晚餐</div>
+    <p class="ec-body">6人簡餐約 <strong>¥600</strong>（Rian家4人 ¥400 / 忻禹李子 ¥200）。<span class="grn">提早回房泡澡睡覺</span>，為明天的迪士尼決戰儲備體力。</p>
+  </div>
+</div>
+<div id="modal22" class="modal-overlay" onclick="if(event.target===this)closeModal('modal22')">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal('modal22')">✕</button>
+    <div class="modal-time">06:30</div>
+    <div class="ec-title modal-title">🍳 起床用早點（不退房）</div>
+    <p class="ec-body">行李原封不動留在房間。帶上 <span class="red">台胞證正本</span>，準備出發。</p>
+  </div>
+</div>
+<div id="modal23" class="modal-overlay" onclick="if(event.target===this)closeModal('modal23')">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal('modal23')">✕</button>
+    <div class="modal-time">07:15</div>
+    <div class="ec-title modal-title">🚌 搭酒店第一班專屬接駁車</div>
+    <p class="ec-body">從迪士尼小鎮通道提前入園。此時一般遊客還在門外排 2 小時安檢，<span class="grn">你們已在刷台胞證進園。</span></p>
+      <div class="badge">✓ 住客提前1小時入園已核實</div>
+  </div>
+</div>
+<div id="modal24" class="modal-overlay" onclick="if(event.target===this)closeModal('modal24')">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal('modal24')">✕</button>
+    <div class="modal-time">07:30</div>
+    <div class="ec-title modal-title">⚡ 黃金一小時 · 狂刷大魔王</div>
+    <p class="ec-body"><span class="red">進園後不要在門口拍照</span>，快步直奔明日世界。</p>
+      <div class="subs">
+        <div class="si"><span class="sno">第1站</span><strong>創極速光輪</strong><span class="wt">此時 5-10 分鐘</span><br>全球最快光速摩托車，晚來排 120 分鐘</div>
+        <div class="si"><span class="sno">第2站</span><strong>噴氣背包</strong><br>10分鐘內連刷兩個大魔王</div>
+      </div>
+  </div>
+</div>
+<div id="modal25" class="modal-overlay" onclick="if(event.target===this)closeModal('modal25')">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal('modal25')">✕</button>
+    <div class="modal-time">08:30</div>
+    <div class="ec-title modal-title">📲 加購尊享卡</div>
+    <p class="ec-body">App 加購6人份「<strong>翱翔·飛越地平線</strong>」尊享卡，¥180×6 = <strong>¥1,080</strong>（Rian家 ¥720 / 忻禹李子 ¥360），免去室外排隊 2 小時。</p>
+  </div>
+</div>
+<div id="modal26" class="modal-overlay" onclick="if(event.target===this)closeModal('modal26')">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal('modal26')">✕</button>
+    <div class="modal-time">08:45</div>
+    <div class="ec-title modal-title">🦊 瘋狂動物城 Zootopia</div>
+    <p class="ec-body">刷完地平線後，前往最新園區體驗「<strong>熱力追蹤</strong>」。買爪爪棒冰，拍照兼降溫。</p>
+  </div>
+</div>
+<div id="modal27" class="modal-overlay" onclick="if(event.target===this)closeModal('modal27')">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal('modal27')">✕</button>
+    <div class="modal-time">12:00</div>
+    <div class="ec-title modal-title">❄️ 極致室內冷氣三部曲</div>
+    <p class="ec-body"><strong>午餐</strong>：寶藏灣・巴波薩燒烤，烤豬肋排</p>
+      <div class="subs">
+        <div class="si">連刷全室內「<strong>加勒比海盜</strong>」</div>
+        <div class="si">觀看《<strong>杰克船長惊天特技大冒險</strong>》室內冷氣劇場</div>
+      </div>
+  </div>
+</div>
+<div id="modal28" class="modal-overlay" onclick="if(event.target===this)closeModal('modal28')">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal('modal28')">✕</button>
+    <div class="modal-time">15:45</div>
+    <div class="ec-title modal-title">🧚 下午溫馨場次</div>
+    <p class="ec-body">玩「<strong>小飛俠</strong>」，傍晚逛愛麗絲迷宮，城堡前拍夕陽全家福。</p>
+  </div>
+</div>
+<div id="modal29" class="modal-overlay" onclick="if(event.target===this)closeModal('modal29')">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal('modal29')">✕</button>
+    <div class="modal-time">19:30</div>
+    <div class="ec-title modal-title">✨ 奇幻光影秀（煙火秀）</div>
+    <p class="ec-body">鎖定城堡正前方觀賞。看完優雅搭接駁車直接回酒店，洗熱水澡躺平。</p>
+  </div>
+</div>
+<div id="modal30" class="modal-overlay" onclick="if(event.target===this)closeModal('modal30')">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal('modal30')">✕</button>
+    <div class="modal-time">08:00</div>
+    <div class="ec-title modal-title">🍳 酒店早餐 ＋ 退房</div>
+    <p class="ec-body">悠閒用完早餐，整理行李辦理退房。</p>
+  </div>
+</div>
+<div id="modal31" class="modal-overlay" onclick="if(event.target===this)closeModal('modal31')">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal('modal31')">✕</button>
+    <div class="modal-time">08:45</div>
+    <div class="ec-title modal-title">🚗 滴滴商務車衝機場（6人·7座）</div>
+    <p class="ec-body">走申嘉湖高速，約 22 公里，車程 <strong>25 分鐘</strong>，車資約 <strong>¥80</strong>。</p>
+  </div>
+</div>
+<div id="modal32" class="modal-overlay" onclick="if(event.target===this)closeModal('modal32')">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal('modal32')">✕</button>
+    <div class="modal-time">09:10</div>
+    <div class="ec-title modal-title">✈️ 抵達浦東機場 T1</div>
+    <p class="ec-body"><strong>華航 CI 502（12:05 起飛）</strong>的 3 小時前黃金報到。<span class="grn">輕鬆過安檢、逛免稅店，平靜返台。</span></p>
+      <div class="badge">✓ 動線已核實</div>
+  </div>
+</div>
+<div id="modal33" class="modal-overlay" onclick="if(event.target===this)closeModal('modal33')">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal('modal33')">✕</button>
+    <div class="modal-time">08:00</div>
+    <div class="ec-title modal-title">🧳 萬怡酒店退房</div>
+    <p class="ec-body">悠閒用完早餐再出發，帶上全部行李，行李推至大廳準備上車。</p>
+  </div>
+</div>
+<div id="modal34" class="modal-overlay" onclick="if(event.target===this)closeModal('modal34')">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal('modal34')">✕</button>
+    <div class="modal-time">09:00</div>
+    <div class="ec-title modal-title">🎪 靜安大悅城・二次元與潮流文創天堂</div>
+    <p class="ec-body">頂樓巨大摩天輪，商場內常年有各種動漫、潮流 IP 官方限定店與展覽。<span class="pur">平仔和 Jelian 可逛最新潮流盲盒、文創周邊，符合現代青少年胃口</span>，全室內冷氣充足。</p>
+      <div class="subs">
+        <div class="si pb">行李先寄存於商場服務台或周邊行李寄存點</div>
+      </div>
+  </div>
+</div>
+<div id="modal35" class="modal-overlay" onclick="if(event.target===this)closeModal('modal35')">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal('modal35')">✕</button>
+    <div class="modal-time">12:00</div>
+    <div class="ec-title modal-title">🍽️ 商場內午餐</div>
+    <p class="ec-body">大悅城內選擇多元，6人午餐約 <strong>¥600</strong>。</p>
+  </div>
+</div>
+<div id="modal36" class="modal-overlay" onclick="if(event.target===this)closeModal('modal36')">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal('modal36')">✕</button>
+    <div class="modal-time">13:30</div>
+    <div class="ec-title modal-title">🏛️ 西岸穹頂藝術中心 / AI 廣場（徐匯西岸）</div>
+    <p class="ec-body">高科技與當代藝術結合的新地標，舊工廠改建的現代美術館群（龍美術館、西岸美術館），緊鄰黃浦江畔，建築線條極具現代感。<span class="pur">Jelian 會很喜歡這裡的國際化街區氛圍，隨手拍都高級。</span></p>
+  </div>
+</div>
+<div id="modal37" class="modal-overlay" onclick="if(event.target===this)closeModal('modal37')">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal('modal37')">✕</button>
+    <div class="modal-time">16:00</div>
+    <div class="ec-title modal-title">🧳 提領行李，準備出發</div>
+    <p class="ec-body">取回行李，準備搭車前往迪士尼酒店。</p>
+  </div>
+</div>
+<div id="modal38" class="modal-overlay" onclick="if(event.target===this)closeModal('modal38')">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal('modal38')">✕</button>
+    <div class="modal-time">16:15</div>
+    <div class="ec-title modal-title">🚗 滴滴商務車 · 直奔迪士尼</div>
+    <p class="ec-body">徐匯西岸 → 玩具總動員酒店，6人＋全部行李，叫 <strong>7座商務車</strong>，車程約 <strong>40-50分鐘</strong>。</p>
+  </div>
+</div>
+<div id="modal39" class="modal-overlay" onclick="if(event.target===this)closeModal('modal39')">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal('modal39')">✕</button>
+    <div class="modal-time">17:00</div>
+    <div class="ec-title modal-title">🏨 入住玩具總動員酒店</div>
+    <p class="ec-body">放行李、換裝。晚餐簡化安排，在酒店或迪士尼小鎮解決（約 <strong>¥600</strong>）。今晚早點休息，銜接明天 07:15 的迪士尼黃金大作戰。</p>
+  </div>
+</div>
+<div id="modal40" class="modal-overlay" onclick="if(event.target===this)closeModal('modal40')">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal('modal40')">✕</button>
+    <div class="modal-time">08:00</div>
+    <div class="ec-title modal-title">🧳 萬怡酒店退房</div>
+    <p class="ec-body">悠閒用完早餐再出發，帶上全部行李，行李推至大廳準備上車。</p>
+  </div>
+</div>
+<div id="modal41" class="modal-overlay" onclick="if(event.target===this)closeModal('modal41')">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal('modal41')">✕</button>
+    <div class="modal-time">09:00</div>
+    <div class="ec-title modal-title">🌳 前法租界梧桐區（武康路・安福路・思南公館）</div>
+    <p class="ec-body">保留大量1920年代歐式洋房與老別墅，街道種滿法國梧桐。沿途獨立書店、文創店、義式小酒館林立。<span class="blu">Jelian 身為模聯社成員，對這種近代東西方文化碰撞、外交官邸雲集的街區會很有共鳴，也是上海著名「街拍聖地」。</span></p>
+      <div class="subs">
+        <div class="si bb">行李先寄存於周邊行李寄存點或咖啡店</div>
+      </div>
+  </div>
+</div>
+<div id="modal42" class="modal-overlay" onclick="if(event.target===this)closeModal('modal42')">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal('modal42')">✕</button>
+    <div class="modal-time">12:00</div>
+    <div class="ec-title modal-title">🍽️ 梧桐區午餐</div>
+    <p class="ec-body">武康路、安福路周邊咖啡館或小餐館，6人午餐約 <strong>¥600</strong>。</p>
+  </div>
+</div>
+<div id="modal43" class="modal-overlay" onclick="if(event.target===this)closeModal('modal43')">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal('modal43')">✕</button>
+    <div class="modal-time">13:30</div>
+    <div class="ec-title modal-title">🏛️ 上海博物館（人民廣場本館 或 東館）</div>
+    <p class="ec-body">中國內地頂級博物館之一，青銅器與古代瓷器收藏堪稱世界級，內部冷氣極強，展陳設計國際一流。<span class="blu">適合安排2-3小時的硬核歷史文化吹冷氣之旅，拔高整個行程的知性深度。</span></p>
+  </div>
+</div>
+<div id="modal44" class="modal-overlay" onclick="if(event.target===this)closeModal('modal44')">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal('modal44')">✕</button>
+    <div class="modal-time">16:00</div>
+    <div class="ec-title modal-title">🧳 提領行李，準備出發</div>
+    <p class="ec-body">取回行李，準備搭車前往迪士尼酒店。</p>
+  </div>
+</div>
+<div id="modal45" class="modal-overlay" onclick="if(event.target===this)closeModal('modal45')">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal('modal45')">✕</button>
+    <div class="modal-time">16:15</div>
+    <div class="ec-title modal-title">🚗 滴滴商務車 · 直奔迪士尼</div>
+    <p class="ec-body">人民廣場 → 玩具總動員酒店，6人＋全部行李，叫 <strong>7座商務車</strong>，車程約 <strong>40-50分鐘</strong>。</p>
+  </div>
+</div>
+<div id="modal46" class="modal-overlay" onclick="if(event.target===this)closeModal('modal46')">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal('modal46')">✕</button>
+    <div class="modal-time">17:00</div>
+    <div class="ec-title modal-title">🏨 入住玩具總動員酒店</div>
+    <p class="ec-body">放行李、換裝。晚餐簡化安排，在酒店或迪士尼小鎮解決（約 <strong>¥600</strong>）。今晚早點休息，銜接明天 07:15 的迪士尼黃金大作戰。</p>
+  </div>
+</div>
+<div id="modal47" class="modal-overlay" onclick="if(event.target===this)closeModal('modal47')">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal('modal47')">✕</button>
+    <div class="modal-time">06:30</div>
+    <div class="ec-title modal-title">🍳 起床用早點（不退房）</div>
+    <p class="ec-body">行李原封不動留在房間。帶上 <span class="red">台胞證正本</span>，準備出發。</p>
+  </div>
+</div>
+<div id="modal48" class="modal-overlay" onclick="if(event.target===this)closeModal('modal48')">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal('modal48')">✕</button>
+    <div class="modal-time">07:15</div>
+    <div class="ec-title modal-title">🚌 搭酒店第一班專屬接駁車</div>
+    <p class="ec-body">從迪士尼小鎮通道提前入園。<span class="grn">你們已在刷台胞證進園，一般遊客還在門外排 2 小時安檢。</span></p><div class="badge">✓ 住客提前1小時入園已核實
+  </div>
+</div>
+<div id="modal49" class="modal-overlay" onclick="if(event.target===this)closeModal('modal49')">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal('modal49')">✕</button>
+    <div class="modal-time">07:30</div>
+    <div class="ec-title modal-title">⚡ 黃金一小時・狂刷大魔王</div>
+    <p class="ec-body"><span class="red">不要在門口拍照</span>，快步直奔明日世界。創極速光輪＋噴氣背包，10分鐘內刷完兩大魔王。</p>
+  </div>
+</div>
+<div id="modal50" class="modal-overlay" onclick="if(event.target===this)closeModal('modal50')">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal('modal50')">✕</button>
+    <div class="modal-time">08:30</div>
+    <div class="ec-title modal-title">📲 加購尊享卡＋瘋狂動物城</div>
+    <p class="ec-body">App 加購飛越地平線尊享卡 ¥180×6 = <strong>¥1,080</strong>。刷完後前往 Zootopia 玩「熱力追蹤」，買爪爪棒冰拍照降溫。</p>
+  </div>
+</div>
+<div id="modal51" class="modal-overlay" onclick="if(event.target===this)closeModal('modal51')">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal('modal51')">✕</button>
+    <div class="modal-time">12:00</div>
+    <div class="ec-title modal-title">❄️ 室內冷氣三部曲</div>
+    <p class="ec-body">巴波薩燒烤午餐→加勒比海盜→杰克船長特技劇場。讓體力滿血回歸。</p>
+  </div>
+</div>
+<div id="modal52" class="modal-overlay" onclick="if(event.target===this)closeModal('modal52')">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal('modal52')">✕</button>
+    <div class="modal-time">15:45</div>
+    <div class="ec-title modal-title">🧚 下午溫馨場次＋夕陽全家福</div>
+    <p class="ec-body">小飛俠→愛麗絲迷宮→城堡前拍夕陽照。</p>
+  </div>
+</div>
+<div id="modal53" class="modal-overlay" onclick="if(event.target===this)closeModal('modal53')">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal('modal53')">✕</button>
+    <div class="modal-time">19:30</div>
+    <div class="ec-title modal-title">✨ 奇幻光影秀</div>
+    <p class="ec-body">城堡正前方觀賞煙火秀。看完搭接駁車回酒店，洗澡躺平。</p>
+  </div>
+</div>
+<div id="modal54" class="modal-overlay" onclick="if(event.target===this)closeModal('modal54')">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal('modal54')">✕</button>
+    <div class="modal-time">08:00</div>
+    <div class="ec-title modal-title">🍳 酒店早餐＋退房</div>
+    <p class="ec-body">悠閒用完早餐，整理行李辦理退房。</p>
+  </div>
+</div>
+<div id="modal55" class="modal-overlay" onclick="if(event.target===this)closeModal('modal55')">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal('modal55')">✕</button>
+    <div class="modal-time">08:45</div>
+    <div class="ec-title modal-title">🚗 滴滴商務車衝機場（6人·7座）</div>
+    <p class="ec-body">走申嘉湖高速，約 22 公里，車程 <strong>25 分鐘</strong>，車資約 <strong>¥80</strong>。</p>
+  </div>
+</div>
+<div id="modal56" class="modal-overlay" onclick="if(event.target===this)closeModal('modal56')">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal('modal56')">✕</button>
+    <div class="modal-time">09:10</div>
+    <div class="ec-title modal-title">✈️ 浦東機場 T1・完美收尾</div>
+    <p class="ec-body"><strong>華航 CI 502（12:05）</strong>的 3 小時前報到，輕鬆過安檢返台。</p><div class="badge">✓ 動線已核實
+  </div>
+</div>
 </body>
 </html>
